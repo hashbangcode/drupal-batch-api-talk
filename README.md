@@ -1,5 +1,5 @@
-# marp-talk-template
-A talk template that uses Marp CLI
+# Drupal Batch API
+A talk about the Drupal Batch API.
 
 ## Install
 
