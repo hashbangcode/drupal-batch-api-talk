@@ -26,7 +26,7 @@ p {
 p.centre {
   text-align: center;
 }
-;" data-marpit-pagination-total="37" data-size="16:9">
+;" data-marpit-pagination-total="41" data-size="16:9">
 <h1 id="the-drupal-batch-api">The Drupal Batch API</h1>
 <p class="centre">Philip Norton<br />
 <small>DrupalCamp Scotland 2024</small></p>
@@ -51,7 +51,7 @@ p {
 p.centre {
   text-align: center;
 }
-;" data-marpit-pagination-total="37" data-size="16:9">
+;" data-marpit-pagination-total="41" data-size="16:9">
 <h1 id="philip-norton">Philip Norton</h1>
 <ul>
 <li>Developer at Code Enigma</li>
@@ -78,7 +78,7 @@ p {
 p.centre {
   text-align: center;
 }
-;" data-marpit-pagination-total="37" data-size="16:9">
+;" data-marpit-pagination-total="41" data-size="16:9">
 <h2 id="source-code">Source Code</h2>
 <ul>
 <li>This presentation is available at<br />
@@ -107,7 +107,7 @@ p {
 p.centre {
   text-align: center;
 }
-;" data-marpit-pagination-total="37" data-size="16:9">
+;" data-marpit-pagination-total="41" data-size="16:9">
 <h2 id="the-batch-api">The Batch API</h2>
 <p>Allows data to be processed in small chunks in order to prevent timeout errors or memory problems.</p>
 <footer>Philip Norton <a href="https://www.hashbangcode.com">hashbangcode.com</a> <a href="https://twitter.com/hashbangcode">@hashbangcode</a> <a href="https://twitter.com/philipnorton42">@philipnorton42</a></footer>
@@ -130,7 +130,7 @@ p {
 p.centre {
   text-align: center;
 }
-;" data-marpit-pagination-total="37" data-size="16:9">
+;" data-marpit-pagination-total="41" data-size="16:9">
 <h1 id="what-problem-are-we-solving">What Problem Are We Solving?</h1>
 <footer>Philip Norton <a href="https://www.hashbangcode.com">hashbangcode.com</a> <a href="https://twitter.com/hashbangcode">@hashbangcode</a> <a href="https://twitter.com/philipnorton42">@philipnorton42</a></footer>
 </section>
@@ -152,7 +152,7 @@ p {
 p.centre {
   text-align: center;
 }
-;" data-marpit-pagination-total="37" data-size="16:9">
+;" data-marpit-pagination-total="41" data-size="16:9">
 <h2 id="bouncing-users">Bouncing Users</h2>
 <ul>
 <li>Users get bored quickly.</li>
@@ -180,7 +180,7 @@ p {
 p.centre {
   text-align: center;
 }
-;" data-marpit-pagination-total="37" data-size="16:9">
+;" data-marpit-pagination-total="41" data-size="16:9">
 <h2 id="server-timeouts">Server Timeouts</h2>
 <ul>
 <li>
@@ -213,7 +213,7 @@ p {
 p.centre {
   text-align: center;
 }
-;" data-marpit-pagination-total="37" data-size="16:9">
+;" data-marpit-pagination-total="41" data-size="16:9">
 <h2 id="what-problem-are-we-solving-1">What Problem Are We Solving?</h2>
 <ul>
 <li>Trying to do too much in one page request.
@@ -245,7 +245,7 @@ p {
 p.centre {
   text-align: center;
 }
-;" data-marpit-pagination-total="37" data-size="16:9">
+;" data-marpit-pagination-total="41" data-size="16:9">
 <h2 id="the-batch-api-1">The Batch API</h2>
 <ul>
 <li>Solves these problems by splitting long tasks into smaller chunks.</li>
@@ -271,7 +271,7 @@ p {
 p.centre {
   text-align: center;
 }
-;" data-marpit-pagination-total="37" data-size="16:9">
+;" data-marpit-pagination-total="41" data-size="16:9">
 <h1 id="the-batch-api-2">The Batch API</h1>
 <footer>Philip Norton <a href="https://www.hashbangcode.com">hashbangcode.com</a> <a href="https://twitter.com/hashbangcode">@hashbangcode</a> <a href="https://twitter.com/philipnorton42">@philipnorton42</a></footer>
 </section>
@@ -293,11 +293,11 @@ p {
 p.centre {
   text-align: center;
 }
-;" data-marpit-pagination-total="37" data-size="16:9">
+;" data-marpit-pagination-total="41" data-size="16:9">
 <h2 id="the-batch-process">The Batch Process</h2>
 <p>The batch process has the following tasks:</p>
 <ul>
-<li><strong>Initiate</strong> - Set up the batch run, define callbacks.</li>
+<li><strong>Initialise</strong> - Set up the batch run, define callbacks.</li>
 <li><strong>Process</strong> - The batch process operations.</li>
 <li><strong>Finish</strong> - A finish callback.</li>
 </ul>
@@ -321,9 +321,9 @@ p {
 p.centre {
   text-align: center;
 }
-;" data-marpit-pagination-total="37" data-size="16:9">
-<h2 id="batchbuilder-class">BatchBuilder Class</h2>
-<p>Used to setup the batch.</p>
+;" data-marpit-pagination-total="41" data-size="16:9">
+<h2 id="initialise">Initialise</h2>
+<p>The BatchBuilder class is used to setup the batch.</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">Drupal</span>\<span class="hljs-title">Core</span>\<span class="hljs-title">Batch</span>\<span class="hljs-title">BatchBuilder</span>;
 <span class="hljs-variable">$batch</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">BatchBuilder</span>();
 </code></pre>
@@ -347,8 +347,8 @@ p {
 p.centre {
   text-align: center;
 }
-;" data-marpit-pagination-total="37" data-size="16:9">
-<h2 id="batchbuilder-class-1">BatchBuilder Class</h2>
+;" data-marpit-pagination-total="41" data-size="16:9">
+<h2 id="initialise-1">Initialise</h2>
 <p>A number of methods set up different parameters.</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-php"><span class="hljs-variable">$batch</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">BatchBuilder</span>();
 <span class="hljs-variable">$batch</span>-&gt;<span class="hljs-title function_ invoke__">setTitle</span>(<span class="hljs-string">&#x27;Running batch process.&#x27;</span>)
@@ -377,8 +377,8 @@ p {
 p.centre {
   text-align: center;
 }
-;" data-marpit-pagination-total="37" data-size="16:9">
-<h2 id="batchbuilder-class-2">BatchBuilder Class</h2>
+;" data-marpit-pagination-total="41" data-size="16:9">
+<h2 id="initialise---adding-operations">Initialise - Adding Operations</h2>
 <p>Populate the operations we want to perform.</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-php"><span class="hljs-comment">// Create 10 chunks of 100 items.</span>
 <span class="hljs-variable">$chunks</span> = <span class="hljs-title function_ invoke__">array_chunk</span>(<span class="hljs-title function_ invoke__">range</span>(<span class="hljs-number">1</span>, <span class="hljs-number">1000</span>), <span class="hljs-number">100</span>);
@@ -412,13 +412,13 @@ p {
 p.centre {
   text-align: center;
 }
-;" data-marpit-pagination-total="37" data-size="16:9">
-<h2 id="running-the-batch">Running The Batch</h2>
+;" data-marpit-pagination-total="41" data-size="16:9">
+<h2 id="process---batch_set">Process - batch_set()</h2>
 <p>Set the batch running by calling <code>toArray()</code> and passing the array to <code>batch_set()</code>.</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-php"><span class="hljs-title function_ invoke__">batch_set</span>(<span class="hljs-variable">$batch</span>-&gt;<span class="hljs-title function_ invoke__">toArray</span>());
 </code></pre>
-<p>The whole purpose of this class to generate that array.<br />
-This will initiate the batch process.</p>
+<p>The whole purpose of BatchBuilder is to generate that array.<br />
+This will trigger and start up the batch process.</p>
 <footer>Philip Norton <a href="https://www.hashbangcode.com">hashbangcode.com</a> <a href="https://twitter.com/hashbangcode">@hashbangcode</a> <a href="https://twitter.com/philipnorton42">@philipnorton42</a></footer>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-paginate="true" data-class="lead invert" data-footer="Philip Norton [hashbangcode.com](https://www.hashbangcode.com) [@hashbangcode](https://twitter.com/hashbangcode) [@philipnorton42](https://twitter.com/philipnorton42)" data-theme="uncover" data-style=".small-text {
@@ -439,8 +439,8 @@ p {
 p.centre {
   text-align: center;
 }
-;" data-marpit-pagination-total="37" data-size="16:9">
-<h2 id="batch-process">Batch Process</h2>
+;" data-marpit-pagination-total="41" data-size="16:9">
+<h2 id="process">Process</h2>
 <ul>
 <li>Callback defined in the <code>addOperation()</code> method.</li>
 <li>Parameters are the array of arguments you set.</li>
@@ -472,8 +472,8 @@ p {
 p.centre {
   text-align: center;
 }
-;" data-marpit-pagination-total="37" data-size="16:9">
-<h2 id="tracking-progress">Tracking Progress</h2>
+;" data-marpit-pagination-total="41" data-size="16:9">
+<h2 id="process---tracking-progress">Process - Tracking Progress</h2>
 <ul>
 <li>The <code>$context</code> parameter is an array that is maintained between different batch calls.</li>
 <li>The <code>&quot;sandbox&quot;</code> element is used inside the batch process and is deleted at the end of the batch run.</li>
@@ -504,8 +504,8 @@ p {
 p.centre {
   text-align: center;
 }
-;" data-marpit-pagination-total="37" data-size="16:9">
-<h2 id="messages">Messages</h2>
+;" data-marpit-pagination-total="41" data-size="16:9">
+<h2 id="process---messages">Process - Messages</h2>
 <ul>
 <li>As the batch runs you can set a <code>&quot;message&quot;</code> element to print messages to the user.</li>
 <li>This will appaer above the batch progress bar.</li>
@@ -537,8 +537,8 @@ p {
 p.centre {
   text-align: center;
 }
-;" data-marpit-pagination-total="37" data-size="16:9">
-<h2 id="finished-callback">Finished Callback</h2>
+;" data-marpit-pagination-total="41" data-size="16:9">
+<h2 id="finish---the-finished-callback">Finish - The Finished Callback</h2>
 <ul>
 <li>When the batch finishes the finished callback is triggered.</li>
 <li>This has a set of parameters that detail how the batch performed.</li>
@@ -570,11 +570,12 @@ p {
 p.centre {
   text-align: center;
 }
-;" data-marpit-pagination-total="37" data-size="16:9">
+;" data-marpit-pagination-total="41" data-size="16:9">
 <h2 id="batch-internal-workings">Batch Internal Workings</h2>
 <ul>
 <li>The Batch API is really an extension of the Queue system.</li>
 <li>When you add operations to the batch you are adding items to the queue.</li>
+<li>The Drupal batch runner then pulls items out of the queue and feeds them to the process method.</li>
 </ul>
 <footer>Philip Norton <a href="https://www.hashbangcode.com">hashbangcode.com</a> <a href="https://twitter.com/hashbangcode">@hashbangcode</a> <a href="https://twitter.com/philipnorton42">@philipnorton42</a></footer>
 </section>
@@ -596,7 +597,7 @@ p {
 p.centre {
   text-align: center;
 }
-;" data-marpit-pagination-total="37" data-size="16:9">
+;" data-marpit-pagination-total="41" data-size="16:9">
 <h1 id="the-batch-finished-state">The Batch &quot;finished&quot; State</h1>
 <footer>Philip Norton <a href="https://www.hashbangcode.com">hashbangcode.com</a> <a href="https://twitter.com/hashbangcode">@hashbangcode</a> <a href="https://twitter.com/philipnorton42">@philipnorton42</a></footer>
 </section>
@@ -618,13 +619,17 @@ p {
 p.centre {
   text-align: center;
 }
-;" data-marpit-pagination-total="37" data-size="16:9">
+;" data-marpit-pagination-total="41" data-size="16:9">
 <h2 id="the-batch-finished-state-1">The Batch &quot;finished&quot; State</h2>
 <ul>
 <li>So far, we have looked at pre-confgured batch runs.</li>
-<li>A better approach is to use the <code>finished</code> property of the batch $context array.</li>
-<li>If we set this value to greater than 1 then the batch process is considered finished.</li>
+<li>A better approach is to use the <code>finished</code> property of the batch <code>$context</code> array.</li>
+<li>If we set this value to &gt;= 1 then the batch process is considered finished.</li>
 </ul>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-php"><span class="hljs-keyword">if</span> (done) {
+  <span class="hljs-variable">$context</span>[<span class="hljs-string">&#x27;finished&#x27;</span>] = <span class="hljs-number">1</span>;
+}
+</code></pre>
 <footer>Philip Norton <a href="https://www.hashbangcode.com">hashbangcode.com</a> <a href="https://twitter.com/hashbangcode">@hashbangcode</a> <a href="https://twitter.com/philipnorton42">@philipnorton42</a></footer>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="23" data-paginate="true" data-class="lead invert" data-footer="Philip Norton [hashbangcode.com](https://www.hashbangcode.com) [@hashbangcode](https://twitter.com/hashbangcode) [@philipnorton42](https://twitter.com/philipnorton42)" data-theme="uncover" data-style=".small-text {
@@ -645,10 +650,13 @@ p {
 p.centre {
   text-align: center;
 }
-;" data-marpit-pagination-total="37" data-size="16:9">
+;" data-marpit-pagination-total="41" data-size="16:9">
 <h2 id="the-batch-finished-state-2">The Batch &quot;finished&quot; State</h2>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-php"><span class="hljs-variable">$context</span>[<span class="hljs-string">&#x27;finished&#x27;</span>] = <span class="hljs-variable">$context</span>[<span class="hljs-string">&#x27;sandbox&#x27;</span>][<span class="hljs-string">&#x27;progress&#x27;</span>] / <span class="hljs-variable">$context</span>[<span class="hljs-string">&#x27;sandbox&#x27;</span>][<span class="hljs-string">&#x27;max&#x27;</span>];
+<p>The setup is slightly different as we only create a single operation.</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-php"><span class="hljs-variable">$array</span> = <span class="hljs-title function_ invoke__">range</span>(<span class="hljs-number">1</span>, <span class="hljs-number">1000</span>);
+<span class="hljs-variable">$batch</span>-&gt;<span class="hljs-title function_ invoke__">addOperation</span>([<span class="hljs-title class_">BatchClass</span>::<span class="hljs-variable language_">class</span>, <span class="hljs-string">&#x27;batchProcess&#x27;</span>], [<span class="hljs-variable">$array</span>]);
 </code></pre>
+<p>This is run over and over until we issue the finished state.</p>
 <footer>Philip Norton <a href="https://www.hashbangcode.com">hashbangcode.com</a> <a href="https://twitter.com/hashbangcode">@hashbangcode</a> <a href="https://twitter.com/philipnorton42">@philipnorton42</a></footer>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="24" data-paginate="true" data-class="lead invert" data-footer="Philip Norton [hashbangcode.com](https://www.hashbangcode.com) [@hashbangcode](https://twitter.com/hashbangcode) [@philipnorton42](https://twitter.com/philipnorton42)" data-theme="uncover" data-style=".small-text {
@@ -669,11 +677,14 @@ p {
 p.centre {
   text-align: center;
 }
-;" data-marpit-pagination-total="37" data-size="16:9">
-<h1 id="running-batch-with-drush">Running Batch With Drush</h1>
+;" data-marpit-pagination-total="41" data-size="16:9">
+<h2 id="the-batch-finished-state-3">The Batch &quot;finished&quot; State</h2>
+<p>It is common to divide the progress by the maximum number of items.</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-php"><span class="hljs-variable">$context</span>[<span class="hljs-string">&#x27;finished&#x27;</span>] = <span class="hljs-variable">$context</span>[<span class="hljs-string">&#x27;sandbox&#x27;</span>][<span class="hljs-string">&#x27;progress&#x27;</span>] / <span class="hljs-variable">$context</span>[<span class="hljs-string">&#x27;sandbox&#x27;</span>][<span class="hljs-string">&#x27;max&#x27;</span>];
+</code></pre>
 <footer>Philip Norton <a href="https://www.hashbangcode.com">hashbangcode.com</a> <a href="https://twitter.com/hashbangcode">@hashbangcode</a> <a href="https://twitter.com/philipnorton42">@philipnorton42</a></footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="25" data-paginate="true" data-class="lead invert" data-footer="Philip Norton [hashbangcode.com](https://www.hashbangcode.com) [@hashbangcode](https://twitter.com/hashbangcode) [@philipnorton42](https://twitter.com/philipnorton42)" data-theme="uncover" data-style=".small-text {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="25" data-paginate="true" data-class="lead invert" data-theme="uncover" data-style=".small-text {
   font-size: 0.75rem;
 }
 p {
@@ -682,7 +693,7 @@ p {
 p.centre {
   text-align: center;
 }
-" lang="C" class="lead invert" data-marpit-pagination="25" style="--paginate:true;--class:lead invert;--footer:Philip Norton [hashbangcode.com](https://www.hashbangcode.com) [@hashbangcode](https://twitter.com/hashbangcode) [@philipnorton42](https://twitter.com/philipnorton42);--theme:uncover;--style:.small-text {
+" lang="C" class="lead invert" data-marpit-pagination="25" style="--paginate:true;--class:lead invert;--theme:uncover;--style:.small-text {
   font-size: 0.75rem;
 }
 p {
@@ -691,22 +702,20 @@ p {
 p.centre {
   text-align: center;
 }
-;" data-marpit-pagination-total="37" data-size="16:9">
-<h2 id="drush">Drush</h2>
-<ul>
-<li>Call batch set as normal.</li>
-</ul>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-php"><span class="hljs-title function_ invoke__">batch_set</span>(<span class="hljs-variable">$batch</span>-&gt;<span class="hljs-title function_ invoke__">toArray</span>());
+;" data-marpit-pagination-total="41" data-size="16:9">
+<h2 id="the-batch-finished-state-4">The Batch &quot;finished&quot; State</h2>
+<p>This means we can just launch the batch with no arguments.</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-php"><span class="hljs-variable">$batch</span>-&gt;<span class="hljs-title function_ invoke__">addOperation</span>([<span class="hljs-title class_">BatchProcessNodes</span>::<span class="hljs-variable language_">class</span>, <span class="hljs-string">&#x27;batchProcess&#x27;</span>]);
 </code></pre>
-<ul>
-<li>Then call the Drush function.</li>
-</ul>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-php"><span class="hljs-title function_ invoke__">drush_backend_batch_process</span>();
+<p>The &quot;max&quot; is found in the batchProcess() method.</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-php"><span class="hljs-keyword">public</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">batchProcess</span>(<span class="hljs-params"><span class="hljs-keyword">array</span> &amp;<span class="hljs-variable">$context</span></span>): <span class="hljs-title">void</span> </span>{
+  <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">isset</span>(<span class="hljs-variable">$context</span>[<span class="hljs-string">&#x27;sandbox&#x27;</span>][<span class="hljs-string">&#x27;progress&#x27;</span>])) {
+    <span class="hljs-variable">$query</span> = <span class="hljs-title class_">\Drupal</span>::<span class="hljs-title function_ invoke__">entityQuery</span>(<span class="hljs-string">&#x27;node&#x27;</span>);
+    <span class="hljs-variable">$query</span>-&gt;<span class="hljs-title function_ invoke__">accessCheck</span>(<span class="hljs-literal">FALSE</span>);
+    <span class="hljs-variable">$context</span>[<span class="hljs-string">&#x27;sandbox&#x27;</span>][<span class="hljs-string">&#x27;progress&#x27;</span>] = <span class="hljs-number">0</span>;
+    <span class="hljs-variable">$context</span>[<span class="hljs-string">&#x27;sandbox&#x27;</span>][<span class="hljs-string">&#x27;max&#x27;</span>] = <span class="hljs-variable">$query</span>-&gt;<span class="hljs-title function_ invoke__">count</span>()-&gt;<span class="hljs-title function_ invoke__">execute</span>();
+  }
 </code></pre>
-<ul>
-<li>This will run the batch on the command line.</li>
-</ul>
-<footer>Philip Norton <a href="https://www.hashbangcode.com">hashbangcode.com</a> <a href="https://twitter.com/hashbangcode">@hashbangcode</a> <a href="https://twitter.com/philipnorton42">@philipnorton42</a></footer>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="26" data-paginate="true" data-class="lead invert" data-footer="Philip Norton [hashbangcode.com](https://www.hashbangcode.com) [@hashbangcode](https://twitter.com/hashbangcode) [@philipnorton42](https://twitter.com/philipnorton42)" data-theme="uncover" data-style=".small-text {
   font-size: 0.75rem;
@@ -726,12 +735,8 @@ p {
 p.centre {
   text-align: center;
 }
-;" data-marpit-pagination-total="37" data-size="16:9">
-<h2 id="when-to-use-the-batch-api">When To Use The Batch API</h2>
-<ul>
-<li>If the request processes lots of items them move it into a batch.</li>
-<li>Use the batch system early to save having to rework things later.</li>
-</ul>
+;" data-marpit-pagination-total="41" data-size="16:9">
+<h1 id="running-batch-with-drush">Running Batch With Drush</h1>
 <footer>Philip Norton <a href="https://www.hashbangcode.com">hashbangcode.com</a> <a href="https://twitter.com/hashbangcode">@hashbangcode</a> <a href="https://twitter.com/philipnorton42">@philipnorton42</a></footer>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="27" data-paginate="true" data-class="lead invert" data-footer="Philip Norton [hashbangcode.com](https://www.hashbangcode.com) [@hashbangcode](https://twitter.com/hashbangcode) [@philipnorton42](https://twitter.com/philipnorton42)" data-theme="uncover" data-style=".small-text {
@@ -752,8 +757,15 @@ p {
 p.centre {
   text-align: center;
 }
-;" data-marpit-pagination-total="37" data-size="16:9">
-<h1 id="examples-of-batch-api-in-action">Examples Of Batch API In Action</h1>
+;" data-marpit-pagination-total="41" data-size="16:9">
+<h2 id="drush">Drush</h2>
+<p>Call batch set as normal.</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-php"><span class="hljs-title function_ invoke__">batch_set</span>(<span class="hljs-variable">$batch</span>-&gt;<span class="hljs-title function_ invoke__">toArray</span>());
+</code></pre>
+<p>Then call the Drush function.</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-php"><span class="hljs-title function_ invoke__">drush_backend_batch_process</span>();
+</code></pre>
+<p>This will run the batch on the command line.</p>
 <footer>Philip Norton <a href="https://www.hashbangcode.com">hashbangcode.com</a> <a href="https://twitter.com/hashbangcode">@hashbangcode</a> <a href="https://twitter.com/philipnorton42">@philipnorton42</a></footer>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="28" data-paginate="true" data-class="lead invert" data-footer="Philip Norton [hashbangcode.com](https://www.hashbangcode.com) [@hashbangcode](https://twitter.com/hashbangcode) [@philipnorton42](https://twitter.com/philipnorton42)" data-theme="uncover" data-style=".small-text {
@@ -774,8 +786,12 @@ p {
 p.centre {
   text-align: center;
 }
-;" data-marpit-pagination-total="37" data-size="16:9">
-<h2 id="batch-using-a-form">Batch Using A Form</h2>
+;" data-marpit-pagination-total="41" data-size="16:9">
+<h2 id="when-to-use-the-batch-api">When To Use The Batch API</h2>
+<ul>
+<li>If the request processes lots of items them move it into a batch.</li>
+<li>Use the batch system early to save having to rework things later.</li>
+</ul>
 <footer>Philip Norton <a href="https://www.hashbangcode.com">hashbangcode.com</a> <a href="https://twitter.com/hashbangcode">@hashbangcode</a> <a href="https://twitter.com/philipnorton42">@philipnorton42</a></footer>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="29" data-paginate="true" data-class="lead invert" data-footer="Philip Norton [hashbangcode.com](https://www.hashbangcode.com) [@hashbangcode](https://twitter.com/hashbangcode) [@philipnorton42](https://twitter.com/philipnorton42)" data-theme="uncover" data-style=".small-text {
@@ -796,8 +812,11 @@ p {
 p.centre {
   text-align: center;
 }
-;" data-marpit-pagination-total="37" data-size="16:9">
-<h2 id="process-a-csv-file">Process a CSV file.</h2>
+;" data-marpit-pagination-total="41" data-size="16:9">
+<h1 id="examples-of-batch-api-in-action">Examples Of Batch API In Action</h1>
+<ul>
+<li>Some live demos!</li>
+</ul>
 <footer>Philip Norton <a href="https://www.hashbangcode.com">hashbangcode.com</a> <a href="https://twitter.com/hashbangcode">@hashbangcode</a> <a href="https://twitter.com/philipnorton42">@philipnorton42</a></footer>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="30" data-paginate="true" data-class="lead invert" data-footer="Philip Norton [hashbangcode.com](https://www.hashbangcode.com) [@hashbangcode](https://twitter.com/hashbangcode) [@philipnorton42](https://twitter.com/philipnorton42)" data-theme="uncover" data-style=".small-text {
@@ -818,8 +837,11 @@ p {
 p.centre {
   text-align: center;
 }
-;" data-marpit-pagination-total="37" data-size="16:9">
-<h1 id="modules-that-use-batch">Modules That Use Batch</h1>
+;" data-marpit-pagination-total="41" data-size="16:9">
+<h2 id="batch-using-a-form">Batch Using A Form</h2>
+<ul>
+<li>Look at 1,000 items and roll a dice.</li>
+</ul>
 <footer>Philip Norton <a href="https://www.hashbangcode.com">hashbangcode.com</a> <a href="https://twitter.com/hashbangcode">@hashbangcode</a> <a href="https://twitter.com/philipnorton42">@philipnorton42</a></footer>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="31" data-paginate="true" data-class="lead invert" data-footer="Philip Norton [hashbangcode.com](https://www.hashbangcode.com) [@hashbangcode](https://twitter.com/hashbangcode) [@philipnorton42](https://twitter.com/philipnorton42)" data-theme="uncover" data-style=".small-text {
@@ -840,11 +862,10 @@ p {
 p.centre {
   text-align: center;
 }
-;" data-marpit-pagination-total="37" data-size="16:9">
-<h2 id="advanced-queue">Advanced Queue</h2>
+;" data-marpit-pagination-total="41" data-size="16:9">
+<h2 id="batch-using-drush">Batch Using Drush</h2>
 <ul>
-<li>Shows a breakdown of the current queues in your system.</li>
-<li>Gives the option to process queues as a batch run.</li>
+<li>Look at 1,000 items and roll a dice.</li>
 </ul>
 <footer>Philip Norton <a href="https://www.hashbangcode.com">hashbangcode.com</a> <a href="https://twitter.com/hashbangcode">@hashbangcode</a> <a href="https://twitter.com/philipnorton42">@philipnorton42</a></footer>
 </section>
@@ -866,15 +887,14 @@ p {
 p.centre {
   text-align: center;
 }
-;" data-marpit-pagination-total="37" data-size="16:9">
-<h2 id="example-links">Example Links</h2>
+;" data-marpit-pagination-total="41" data-size="16:9">
+<h2 id="process-a-csv-file">Process a CSV file</h2>
 <ul>
-<li><a href="https://www.hashbangcode.com">Link to website</a></li>
-<li><a href="#5">Link to slide</a></li>
+<li>Import 1,000 nodes using a batch process.</li>
 </ul>
 <footer>Philip Norton <a href="https://www.hashbangcode.com">hashbangcode.com</a> <a href="https://twitter.com/hashbangcode">@hashbangcode</a> <a href="https://twitter.com/philipnorton42">@philipnorton42</a></footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="33" data-paginate="true" data-class="lead invert" data-theme="uncover" data-style=".small-text {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="33" data-paginate="true" data-class="lead invert" data-footer="Philip Norton [hashbangcode.com](https://www.hashbangcode.com) [@hashbangcode](https://twitter.com/hashbangcode) [@philipnorton42](https://twitter.com/philipnorton42)" data-theme="uncover" data-style=".small-text {
   font-size: 0.75rem;
 }
 p {
@@ -883,7 +903,7 @@ p {
 p.centre {
   text-align: center;
 }
-" lang="C" class="lead invert" data-marpit-pagination="33" style="--paginate:true;--class:lead invert;--theme:uncover;--style:.small-text {
+" lang="C" class="lead invert" data-marpit-pagination="33" style="--paginate:true;--class:lead invert;--footer:Philip Norton [hashbangcode.com](https://www.hashbangcode.com) [@hashbangcode](https://twitter.com/hashbangcode) [@philipnorton42](https://twitter.com/philipnorton42);--theme:uncover;--style:.small-text {
   font-size: 0.75rem;
 }
 p {
@@ -892,11 +912,9 @@ p {
 p.centre {
   text-align: center;
 }
-;" data-marpit-pagination-total="37" data-size="16:9">
-<h2 id="page-without-a-footer">Page without a footer</h2>
-<ul>
-<li>Nope, no footer.</li>
-</ul>
+;" data-marpit-pagination-total="41" data-size="16:9">
+<h1 id="batch-inside-drupal">Batch Inside Drupal</h1>
+<footer>Philip Norton <a href="https://www.hashbangcode.com">hashbangcode.com</a> <a href="https://twitter.com/hashbangcode">@hashbangcode</a> <a href="https://twitter.com/philipnorton42">@philipnorton42</a></footer>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="34" data-paginate="true" data-class="lead invert" data-footer="Philip Norton [hashbangcode.com](https://www.hashbangcode.com) [@hashbangcode](https://twitter.com/hashbangcode) [@philipnorton42](https://twitter.com/philipnorton42)" data-theme="uncover" data-style=".small-text {
   font-size: 0.75rem;
@@ -916,56 +934,14 @@ p {
 p.centre {
   text-align: center;
 }
-;" data-marpit-pagination-total="37" data-size="16:9">
-<h2 id="small-text-slide">Small Text Slide</h2>
-<p class="small-text">This is small text.</p>
-<footer>Philip Norton <a href="https://www.hashbangcode.com">hashbangcode.com</a> <a href="https://twitter.com/hashbangcode">@hashbangcode</a> <a href="https://twitter.com/philipnorton42">@philipnorton42</a></footer>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-class="lead invert" data-footer="Philip Norton [hashbangcode.com](https://www.hashbangcode.com) [@hashbangcode](https://twitter.com/hashbangcode) [@philipnorton42](https://twitter.com/philipnorton42)" data-theme="uncover" data-style=".small-text {
-  font-size: 0.75rem;
-}
-p {
-  text-align: left;
-}
-p.centre {
-  text-align: center;
-}
-" lang="C" class="lead invert" data-marpit-pagination="35" style="--paginate:true;--class:lead invert;--footer:Philip Norton [hashbangcode.com](https://www.hashbangcode.com) [@hashbangcode](https://twitter.com/hashbangcode) [@philipnorton42](https://twitter.com/philipnorton42);--theme:uncover;--style:.small-text {
-  font-size: 0.75rem;
-}
-p {
-  text-align: left;
-}
-p.centre {
-  text-align: center;
-}
-;--marpit-advanced-background-split:50%;" data-marpit-pagination-total="37" data-size="16:9" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;../src/assets/images/hashbangcode_logo.png&quot;);"></figure></div></section></foreignObject><foreignObject width="50%" height="720"><section id="35" data-paginate="true" data-class="lead invert" data-footer="Philip Norton [hashbangcode.com](https://www.hashbangcode.com) [@hashbangcode](https://twitter.com/hashbangcode) [@philipnorton42](https://twitter.com/philipnorton42)" data-theme="uncover" data-style=".small-text {
-  font-size: 0.75rem;
-}
-p {
-  text-align: left;
-}
-p.centre {
-  text-align: center;
-}
-" lang="C" class="lead invert" data-marpit-pagination="35" style="--paginate:true;--class:lead invert;--footer:Philip Norton [hashbangcode.com](https://www.hashbangcode.com) [@hashbangcode](https://twitter.com/hashbangcode) [@philipnorton42](https://twitter.com/philipnorton42);--theme:uncover;--style:.small-text {
-  font-size: 0.75rem;
-}
-p {
-  text-align: left;
-}
-p.centre {
-  text-align: center;
-}
-;--marpit-advanced-background-split:50%;" data-marpit-pagination-total="37" data-size="16:9" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
-<h2 id="talk-template-with-image">Talk template with image</h2>
+;" data-marpit-pagination-total="41" data-size="16:9">
+<h2 id="the-update-hook">The Update Hook</h2>
 <ul>
-<li>Something.<br />
-</li>
+<li>Update hooks get a $sandbox variable. This is actually a batch $context array.</li>
 </ul>
 <footer>Philip Norton <a href="https://www.hashbangcode.com">hashbangcode.com</a> <a href="https://twitter.com/hashbangcode">@hashbangcode</a> <a href="https://twitter.com/philipnorton42">@philipnorton42</a></footer>
 </section>
-</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-paginate="true" data-class="lead invert" data-footer="Philip Norton [hashbangcode.com](https://www.hashbangcode.com) [@hashbangcode](https://twitter.com/hashbangcode) [@philipnorton42](https://twitter.com/philipnorton42)" data-theme="uncover" data-style=".small-text {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="35" data-paginate="true" data-class="lead invert" data-footer="Philip Norton [hashbangcode.com](https://www.hashbangcode.com) [@hashbangcode](https://twitter.com/hashbangcode) [@philipnorton42](https://twitter.com/philipnorton42)" data-theme="uncover" data-style=".small-text {
   font-size: 0.75rem;
 }
 p {
@@ -974,7 +950,7 @@ p {
 p.centre {
   text-align: center;
 }
-" lang="C" class="lead invert" data-marpit-pagination="35" style="" data-marpit-pagination-total="37" data-size="16:9" data-marpit-advanced-background="pseudo" data-marpit-advanced-background-split="right"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-class="lead invert" data-theme="uncover" data-style=".small-text {
+" lang="C" class="lead invert" data-marpit-pagination="35" style="--paginate:true;--class:lead invert;--footer:Philip Norton [hashbangcode.com](https://www.hashbangcode.com) [@hashbangcode](https://twitter.com/hashbangcode) [@philipnorton42](https://twitter.com/philipnorton42);--theme:uncover;--style:.small-text {
   font-size: 0.75rem;
 }
 p {
@@ -983,7 +959,11 @@ p {
 p.centre {
   text-align: center;
 }
-" lang="C" class="lead invert" data-marpit-pagination="36" style="--paginate:true;--class:lead invert;--theme:uncover;--style:.small-text {
+;" data-marpit-pagination-total="41" data-size="16:9">
+<h1 id="modules-that-use-batch">Modules That Use Batch</h1>
+<footer>Philip Norton <a href="https://www.hashbangcode.com">hashbangcode.com</a> <a href="https://twitter.com/hashbangcode">@hashbangcode</a> <a href="https://twitter.com/philipnorton42">@philipnorton42</a></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="36" data-paginate="true" data-class="lead invert" data-footer="Philip Norton [hashbangcode.com](https://www.hashbangcode.com) [@hashbangcode](https://twitter.com/hashbangcode) [@philipnorton42](https://twitter.com/philipnorton42)" data-theme="uncover" data-style=".small-text {
   font-size: 0.75rem;
 }
 p {
@@ -992,7 +972,7 @@ p {
 p.centre {
   text-align: center;
 }
-;" data-marpit-pagination-total="37" data-size="16:9" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;../src/assets/images/hashbangcode_logo.png&quot;);background-size:auto 100%;"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="36" data-paginate="true" data-class="lead invert" data-theme="uncover" data-style=".small-text {
+" lang="C" class="lead invert" data-marpit-pagination="36" style="--paginate:true;--class:lead invert;--footer:Philip Norton [hashbangcode.com](https://www.hashbangcode.com) [@hashbangcode](https://twitter.com/hashbangcode) [@philipnorton42](https://twitter.com/philipnorton42);--theme:uncover;--style:.small-text {
   font-size: 0.75rem;
 }
 p {
@@ -1001,26 +981,15 @@ p {
 p.centre {
   text-align: center;
 }
-" lang="C" class="lead invert" data-marpit-pagination="36" style="--paginate:true;--class:lead invert;--theme:uncover;--style:.small-text {
-  font-size: 0.75rem;
-}
-p {
-  text-align: left;
-}
-p.centre {
-  text-align: center;
-}
-;" data-marpit-pagination-total="37" data-size="16:9" data-marpit-advanced-background="content"></section>
-</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-paginate="true" data-class="lead invert" data-theme="uncover" data-style=".small-text {
-  font-size: 0.75rem;
-}
-p {
-  text-align: left;
-}
-p.centre {
-  text-align: center;
-}
-" lang="C" class="lead invert" data-marpit-pagination="36" style="" data-marpit-pagination-total="37" data-size="16:9" data-marpit-advanced-background="pseudo"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="37" data-paginate="true" data-class="lead invert" data-footer="Philip Norton [hashbangcode.com](https://www.hashbangcode.com) [@hashbangcode](https://twitter.com/hashbangcode) [@philipnorton42](https://twitter.com/philipnorton42)" data-theme="uncover" data-style=".small-text {
+;" data-marpit-pagination-total="41" data-size="16:9">
+<h2 id="view-batch-operation">View Batch Operation</h2>
+<ul>
+<li>Batch process items in a view.</li>
+</ul>
+<p><small><a href="https://www.drupal.org/project/views_bulk_operations">https://www.drupal.org/project/views_bulk_operations</a></small></p>
+<footer>Philip Norton <a href="https://www.hashbangcode.com">hashbangcode.com</a> <a href="https://twitter.com/hashbangcode">@hashbangcode</a> <a href="https://twitter.com/philipnorton42">@philipnorton42</a></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="37" data-paginate="true" data-class="lead invert" data-footer="Philip Norton [hashbangcode.com](https://www.hashbangcode.com) [@hashbangcode](https://twitter.com/hashbangcode) [@philipnorton42](https://twitter.com/philipnorton42)" data-theme="uncover" data-style=".small-text {
   font-size: 0.75rem;
 }
 p {
@@ -1038,7 +1007,167 @@ p {
 p.centre {
   text-align: center;
 }
-;" data-marpit-pagination-total="37" data-size="16:9">
+;" data-marpit-pagination-total="41" data-size="16:9">
+<h2 id="advanced-queue">Advanced Queue</h2>
+<ul>
+<li>Shows a breakdown of the current queues in your system.</li>
+<li>Gives the option to process queues as a batch run.</li>
+</ul>
+<p><small><a href="https://www.drupal.org/project/advancedqueue">https://www.drupal.org/project/advancedqueue</a></small></p>
+<footer>Philip Norton <a href="https://www.hashbangcode.com">hashbangcode.com</a> <a href="https://twitter.com/hashbangcode">@hashbangcode</a> <a href="https://twitter.com/philipnorton42">@philipnorton42</a></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="38" data-paginate="true" data-class="lead invert" data-footer="Philip Norton [hashbangcode.com](https://www.hashbangcode.com) [@hashbangcode](https://twitter.com/hashbangcode) [@philipnorton42](https://twitter.com/philipnorton42)" data-theme="uncover" data-style=".small-text {
+  font-size: 0.75rem;
+}
+p {
+  text-align: left;
+}
+p.centre {
+  text-align: center;
+}
+" lang="C" class="lead invert" data-marpit-pagination="38" style="--paginate:true;--class:lead invert;--footer:Philip Norton [hashbangcode.com](https://www.hashbangcode.com) [@hashbangcode](https://twitter.com/hashbangcode) [@philipnorton42](https://twitter.com/philipnorton42);--theme:uncover;--style:.small-text {
+  font-size: 0.75rem;
+}
+p {
+  text-align: left;
+}
+p.centre {
+  text-align: center;
+}
+;" data-marpit-pagination-total="41" data-size="16:9">
+<h2 id="resources">Resources</h2>
+<ul>
+<li><a href="https://www.hashbangcode.com/article/drupal-11-introduction-batch-processing-batch-api">Drupal 11: An Introduction To Batch Processing With The Batch API</a></li>
+<li><a href="https://www.hashbangcode.com/article/drupal-11-batch-processing-using-drush">Drupal 11: Batch Processing Using Drush</a></li>
+<li><a href="https://www.hashbangcode.com/article/drupal-11-using-finished-state-batch-processing">Drupal 11: Using The Finished State In Batch Processing</a></li>
+<li><a href="https://www.hashbangcode.com/article/drupal-11-using-batch-api-process-csv-files">Drupal 11: Using The Batch API To Process CSV Files</a></li>
+<li><a href="https://github.com/hashbangcode/drupal_batch_examples/">Drupal Batch Examples source code</a></li>
+</ul>
+<footer>Philip Norton <a href="https://www.hashbangcode.com">hashbangcode.com</a> <a href="https://twitter.com/hashbangcode">@hashbangcode</a> <a href="https://twitter.com/philipnorton42">@philipnorton42</a></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-class="lead invert" data-footer="Philip Norton [hashbangcode.com](https://www.hashbangcode.com) [@hashbangcode](https://twitter.com/hashbangcode) [@philipnorton42](https://twitter.com/philipnorton42)" data-theme="uncover" data-style=".small-text {
+  font-size: 0.75rem;
+}
+p {
+  text-align: left;
+}
+p.centre {
+  text-align: center;
+}
+" lang="C" class="lead invert" data-marpit-pagination="39" style="--paginate:true;--class:lead invert;--footer:Philip Norton [hashbangcode.com](https://www.hashbangcode.com) [@hashbangcode](https://twitter.com/hashbangcode) [@philipnorton42](https://twitter.com/philipnorton42);--theme:uncover;--style:.small-text {
+  font-size: 0.75rem;
+}
+p {
+  text-align: left;
+}
+p.centre {
+  text-align: center;
+}
+;--marpit-advanced-background-split:40%;" data-marpit-pagination-total="41" data-size="16:9" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;../src/assets/images/qr_slides.png&quot;);background-size:auto 50%;"></figure></div></section></foreignObject><foreignObject width="60%" height="720"><section id="39" data-paginate="true" data-class="lead invert" data-footer="Philip Norton [hashbangcode.com](https://www.hashbangcode.com) [@hashbangcode](https://twitter.com/hashbangcode) [@philipnorton42](https://twitter.com/philipnorton42)" data-theme="uncover" data-style=".small-text {
+  font-size: 0.75rem;
+}
+p {
+  text-align: left;
+}
+p.centre {
+  text-align: center;
+}
+" lang="C" class="lead invert" data-marpit-pagination="39" style="--paginate:true;--class:lead invert;--footer:Philip Norton [hashbangcode.com](https://www.hashbangcode.com) [@hashbangcode](https://twitter.com/hashbangcode) [@philipnorton42](https://twitter.com/philipnorton42);--theme:uncover;--style:.small-text {
+  font-size: 0.75rem;
+}
+p {
+  text-align: left;
+}
+p.centre {
+  text-align: center;
+}
+;--marpit-advanced-background-split:40%;" data-marpit-pagination-total="41" data-size="16:9" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
+<h2 id="questions">Questions?</h2>
+<ul>
+<li>Slides: <a href="https://github.com/hashbangcode/drupal-batch-api-talk">https://github.com/hashbangcode/drupal-batch-api-talk</a></li>
+</ul>
+<footer>Philip Norton <a href="https://www.hashbangcode.com">hashbangcode.com</a> <a href="https://twitter.com/hashbangcode">@hashbangcode</a> <a href="https://twitter.com/philipnorton42">@philipnorton42</a></footer>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-paginate="true" data-class="lead invert" data-footer="Philip Norton [hashbangcode.com](https://www.hashbangcode.com) [@hashbangcode](https://twitter.com/hashbangcode) [@philipnorton42](https://twitter.com/philipnorton42)" data-theme="uncover" data-style=".small-text {
+  font-size: 0.75rem;
+}
+p {
+  text-align: left;
+}
+p.centre {
+  text-align: center;
+}
+" lang="C" class="lead invert" data-marpit-pagination="39" style="" data-marpit-pagination-total="41" data-size="16:9" data-marpit-advanced-background="pseudo" data-marpit-advanced-background-split="right"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-class="lead invert" data-footer="Philip Norton [hashbangcode.com](https://www.hashbangcode.com) [@hashbangcode](https://twitter.com/hashbangcode) [@philipnorton42](https://twitter.com/philipnorton42)" data-theme="uncover" data-style=".small-text {
+  font-size: 0.75rem;
+}
+p {
+  text-align: left;
+}
+p.centre {
+  text-align: center;
+}
+" lang="C" class="lead invert" data-marpit-pagination="40" style="--paginate:true;--class:lead invert;--footer:Philip Norton [hashbangcode.com](https://www.hashbangcode.com) [@hashbangcode](https://twitter.com/hashbangcode) [@philipnorton42](https://twitter.com/philipnorton42);--theme:uncover;--style:.small-text {
+  font-size: 0.75rem;
+}
+p {
+  text-align: left;
+}
+p.centre {
+  text-align: center;
+}
+;--marpit-advanced-background-split:40%;" data-marpit-pagination-total="41" data-size="16:9" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;../src/assets/images/qr_slides.png&quot;);background-size:auto 50%;"></figure></div></section></foreignObject><foreignObject width="60%" height="720"><section id="40" data-paginate="true" data-class="lead invert" data-footer="Philip Norton [hashbangcode.com](https://www.hashbangcode.com) [@hashbangcode](https://twitter.com/hashbangcode) [@philipnorton42](https://twitter.com/philipnorton42)" data-theme="uncover" data-style=".small-text {
+  font-size: 0.75rem;
+}
+p {
+  text-align: left;
+}
+p.centre {
+  text-align: center;
+}
+" lang="C" class="lead invert" data-marpit-pagination="40" style="--paginate:true;--class:lead invert;--footer:Philip Norton [hashbangcode.com](https://www.hashbangcode.com) [@hashbangcode](https://twitter.com/hashbangcode) [@philipnorton42](https://twitter.com/philipnorton42);--theme:uncover;--style:.small-text {
+  font-size: 0.75rem;
+}
+p {
+  text-align: left;
+}
+p.centre {
+  text-align: center;
+}
+;--marpit-advanced-background-split:40%;" data-marpit-pagination-total="41" data-size="16:9" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
+<h2 id="thanks">Thanks!</h2>
+<ul>
+<li>Slides: <a href="https://github.com/hashbangcode/drupal-batch-api-talk">https://github.com/hashbangcode/drupal-batch-api-talk</a></li>
+</ul>
+<footer>Philip Norton <a href="https://www.hashbangcode.com">hashbangcode.com</a> <a href="https://twitter.com/hashbangcode">@hashbangcode</a> <a href="https://twitter.com/philipnorton42">@philipnorton42</a></footer>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-paginate="true" data-class="lead invert" data-footer="Philip Norton [hashbangcode.com](https://www.hashbangcode.com) [@hashbangcode](https://twitter.com/hashbangcode) [@philipnorton42](https://twitter.com/philipnorton42)" data-theme="uncover" data-style=".small-text {
+  font-size: 0.75rem;
+}
+p {
+  text-align: left;
+}
+p.centre {
+  text-align: center;
+}
+" lang="C" class="lead invert" data-marpit-pagination="40" style="" data-marpit-pagination-total="41" data-size="16:9" data-marpit-advanced-background="pseudo" data-marpit-advanced-background-split="right"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="41" data-paginate="true" data-class="lead invert" data-footer="Philip Norton [hashbangcode.com](https://www.hashbangcode.com) [@hashbangcode](https://twitter.com/hashbangcode) [@philipnorton42](https://twitter.com/philipnorton42)" data-theme="uncover" data-style=".small-text {
+  font-size: 0.75rem;
+}
+p {
+  text-align: left;
+}
+p.centre {
+  text-align: center;
+}
+" lang="C" class="lead invert" data-marpit-pagination="41" style="--paginate:true;--class:lead invert;--footer:Philip Norton [hashbangcode.com](https://www.hashbangcode.com) [@hashbangcode](https://twitter.com/hashbangcode) [@philipnorton42](https://twitter.com/philipnorton42);--theme:uncover;--style:.small-text {
+  font-size: 0.75rem;
+}
+p {
+  text-align: left;
+}
+p.centre {
+  text-align: center;
+}
+;" data-marpit-pagination-total="41" data-size="16:9">
 <footer>Philip Norton <a href="https://www.hashbangcode.com">hashbangcode.com</a> <a href="https://twitter.com/hashbangcode">@hashbangcode</a> <a href="https://twitter.com/philipnorton42">@philipnorton42</a></footer>
 </section>
 <script>!function(){"use strict";const t={h1:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"1"},style:"display: block; font-size: 2em; margin-block-start: 0.67em; margin-block-end: 0.67em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h2:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"2"},style:"display: block; font-size: 1.5em; margin-block-start: 0.83em; margin-block-end: 0.83em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h3:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"3"},style:"display: block; font-size: 1.17em; margin-block-start: 1em; margin-block-end: 1em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h4:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"4"},style:"display: block; margin-block-start: 1.33em; margin-block-end: 1.33em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h5:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"5"},style:"display: block; font-size: 0.83em; margin-block-start: 1.67em; margin-block-end: 1.67em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h6:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"6"},style:"display: block; font-size: 0.67em; margin-block-start: 2.33em; margin-block-end: 2.33em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},span:{proto:()=>HTMLSpanElement},pre:{proto:()=>HTMLElement,style:"display: block; font-family: monospace; white-space: pre; margin: 1em 0; --marp-auto-scaling-white-space: pre;"}},e="data-marp-auto-scaling-wrapper",i="data-marp-auto-scaling-svg",n="data-marp-auto-scaling-container";class s extends HTMLElement{constructor(){super(),this.svgPreserveAspectRatio="xMinYMid meet";const t=t=>([e])=>{const{width:i,height:n}=e.contentRect;this[t]={width:i,height:n},this.updateSVGRect()};this.attachShadow({mode:"open"}),this.containerObserver=new ResizeObserver(t("containerSize")),this.wrapperObserver=new ResizeObserver(((...e)=>{t("wrapperSize")(...e),this.flushSvgDisplay()}))}static get observedAttributes(){return["data-downscale-only"]}connectedCallback(){var t,s,o,r,a;this.shadowRoot.innerHTML=`\n<style>\n  svg[${i}] { display: block; width: 100%; height: auto; vertical-align: top; }\n  span[${n}] { display: table; white-space: var(--marp-auto-scaling-white-space, nowrap); width: max-content; }\n</style>\n<div ${e}>\n  <svg part="svg" ${i}>\n    <foreignObject><span ${n}><slot></slot></span></foreignObject>\n  </svg>\n</div>\n    `.split(/\n\s*/).join(""),this.wrapper=null!==(t=this.shadowRoot.querySelector(`div[${e}]`))&&void 0!==t?t:void 0;const l=this.svg;this.svg=null!==(o=null===(s=this.wrapper)||void 0===s?void 0:s.querySelector(`svg[${i}]`))&&void 0!==o?o:void 0,this.svg!==l&&(this.svgComputedStyle=this.svg?window.getComputedStyle(this.svg):void 0),this.container=null!==(a=null===(r=this.svg)||void 0===r?void 0:r.querySelector(`span[${n}]`))&&void 0!==a?a:void 0,this.observe()}disconnectedCallback(){this.svg=void 0,this.svgComputedStyle=void 0,this.wrapper=void 0,this.container=void 0,this.observe()}attributeChangedCallback(){this.observe()}flushSvgDisplay(){const{svg:t}=this;t&&(t.style.display="inline",requestAnimationFrame((()=>{t.style.display=""})))}observe(){this.containerObserver.disconnect(),this.wrapperObserver.disconnect(),this.wrapper&&this.wrapperObserver.observe(this.wrapper),this.container&&this.containerObserver.observe(this.container),this.svgComputedStyle&&this.observeSVGStyle(this.svgComputedStyle)}observeSVGStyle(t){const e=()=>{const i=(()=>{const e=t.getPropertyValue("--preserve-aspect-ratio");if(e)return e.trim();return`x${(({textAlign:t,direction:e})=>{if(t.endsWith("left"))return"Min";if(t.endsWith("right"))return"Max";if("start"===t||"end"===t){let i="rtl"===e;return"end"===t&&(i=!i),i?"Max":"Min"}return"Mid"})(t)}YMid meet`})();i!==this.svgPreserveAspectRatio&&(this.svgPreserveAspectRatio=i,this.updateSVGRect()),t===this.svgComputedStyle&&requestAnimationFrame(e)};e()}updateSVGRect(){var t,e,i,n,s,o,r;let a=Math.ceil(null!==(e=null===(t=this.containerSize)||void 0===t?void 0:t.width)&&void 0!==e?e:0);const l=Math.ceil(null!==(n=null===(i=this.containerSize)||void 0===i?void 0:i.height)&&void 0!==n?n:0);void 0!==this.dataset.downscaleOnly&&(a=Math.max(a,null!==(o=null===(s=this.wrapperSize)||void 0===s?void 0:s.width)&&void 0!==o?o:0));const c=null===(r=this.svg)||void 0===r?void 0:r.querySelector(":scope > foreignObject");if(null==c||c.setAttribute("width",`${a}`),null==c||c.setAttribute("height",`${l}`),this.svg&&(this.svg.setAttribute("viewBox",`0 0 ${a} ${l}`),this.svg.setAttribute("preserveAspectRatio",this.svgPreserveAspectRatio),this.svg.style.height=a<=0||l<=0?"0":""),this.container){const t=this.svgPreserveAspectRatio.toLowerCase();this.container.style.marginLeft=t.startsWith("xmid")||t.startsWith("xmax")?"auto":"0",this.container.style.marginRight=t.startsWith("xmi")?"auto":"0"}}}const o=(t,{attrs:e={},style:i})=>class extends t{constructor(...t){super(...t);for(const[t,i]of Object.entries(e))this.hasAttribute(t)||this.setAttribute(t,i);this.attachShadow({mode:"open"})}static get observedAttributes(){return["data-auto-scaling"]}connectedCallback(){this._update()}attributeChangedCallback(){this._update()}_update(){const t=i?`<style>:host { ${i} }</style>`:"";let e="<slot></slot>";const{autoScaling:n}=this.dataset;if(void 0!==n){e=`<marp-auto-scaling exportparts="svg:auto-scaling" ${"downscale-only"===n?"data-downscale-only":""}>${e}</marp-auto-scaling>`}this.shadowRoot.innerHTML=t+e}};let r;const a=Symbol();let l;const c="marpitSVGPolyfill:setZoomFactor,",d=Symbol(),g=Symbol();const h=()=>{const t="Apple Computer, Inc."===navigator.vendor,e=t?[u]:[],i={then:e=>(t?(async()=>{if(void 0===l){const t=document.createElement("canvas");t.width=10,t.height=10;const e=t.getContext("2d"),i=new Image(10,10),n=new Promise((t=>{i.addEventListener("load",(()=>t()))}));i.crossOrigin="anonymous",i.src="data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2210%22%20height%3D%2210%22%20viewBox%3D%220%200%201%201%22%3E%3CforeignObject%20width%3D%221%22%20height%3D%221%22%20requiredExtensions%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%3E%3Cdiv%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%20style%3D%22width%3A%201px%3B%20height%3A%201px%3B%20background%3A%20red%3B%20position%3A%20relative%22%3E%3C%2Fdiv%3E%3C%2FforeignObject%3E%3C%2Fsvg%3E",await n,e.drawImage(i,0,0),l=e.getImageData(5,5,1,1).data[3]<128}return l})().then((t=>{null==e||e(t?[u]:[])})):null==e||e([]),i)};return Object.assign(e,i)};let p,m;function u(t){const e="object"==typeof t&&t.target||document,i="object"==typeof t?t.zoom:t;window[g]||(Object.defineProperty(window,g,{configurable:!0,value:!0}),document.body.style.zoom=1.0001,document.body.offsetHeight,document.body.style.zoom=1,window.addEventListener("message",(({data:t,origin:e})=>{if(e===window.origin)try{if(t&&"string"==typeof t&&t.startsWith(c)){const[,e]=t.split(","),i=Number.parseFloat(e);Number.isNaN(i)||(m=i)}}catch(t){console.error(t)}})));let n=!1;Array.from(e.querySelectorAll("svg[data-marpit-svg]"),(t=>{var e,s,o,r;t.style.transform||(t.style.transform="translateZ(0)");const a=i||m||t.currentScale||1;p!==a&&(p=a,n=a);const l=t.getBoundingClientRect(),{length:c}=t.children;for(let i=0;i<c;i+=1){const n=t.children[i];if(n.getScreenCTM){const t=n.getScreenCTM();if(t){const i=null!==(s=null===(e=n.x)||void 0===e?void 0:e.baseVal.value)&&void 0!==s?s:0,c=null!==(r=null===(o=n.y)||void 0===o?void 0:o.baseVal.value)&&void 0!==r?r:0,d=n.children.length;for(let e=0;e<d;e+=1){const s=n.children[e];if("SECTION"===s.tagName){const{style:e}=s;e.transformOrigin||(e.transformOrigin=`${-i}px ${-c}px`),e.transform=`scale(${a}) matrix(${t.a}, ${t.b}, ${t.c}, ${t.d}, ${t.e-l.left}, ${t.f-l.top}) translateZ(0.0001px)`;break}}}}}})),!1!==n&&Array.from(e.querySelectorAll("iframe"),(({contentWindow:t})=>{null==t||t.postMessage(`${c}${n}`,"null"===window.origin?"*":window.origin)}))}function v({once:t=!1,target:e=document}={}){const i=function(t=document){if(t[d])return t[d];let e=!0;const i=()=>{e=!1,delete t[d]};Object.defineProperty(t,d,{configurable:!0,value:i});let n=[],s=!1;(async()=>{try{n=await h()}finally{s=!0}})();const o=()=>{for(const e of n)e({target:t});s&&0===n.length||e&&window.requestAnimationFrame(o)};return o(),i}(e);return t?(i(),()=>{}):i}p=1,m=void 0;const b=Symbol(),w=(e=document)=>{if("undefined"==typeof window)throw new Error("Marp Core's browser script is valid only in browser context.");if(((e=document)=>{const i=window[a];i||customElements.define("marp-auto-scaling",s);for(const n of Object.keys(t)){const s=`marp-${n}`,a=t[n].proto();null!=r||(r=!!document.createElement("div",{is:"marp-auto-scaling"}).outerHTML.startsWith("<div is")),r&&a!==HTMLElement?i||customElements.define(s,o(a,{style:t[n].style}),{extends:n}):(i||customElements.define(s,o(HTMLElement,t[n])),e.querySelectorAll(`${n}[is="${s}"]`).forEach((t=>{t.outerHTML=t.outerHTML.replace(new RegExp(`^<${n}`,"i"),`<${s}`).replace(new RegExp(`</${n}>$`,"i"),`</${s}>`)})))}window[a]=!0})(e),e[b])return e[b];const i=v({target:e}),n=()=>{i(),delete e[b]},l=Object.assign(n,{cleanup:n,update:()=>w(e)});return Object.defineProperty(e,b,{configurable:!0,value:l}),l},y=document.currentScript;w(y?y.getRootNode():document)}();
