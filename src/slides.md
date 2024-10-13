@@ -109,15 +109,15 @@ Think about how long a page request should take in you web server.
 
 The batch process has the following tasks:
 
-- <strong>Initiate</strong> - Set up the batch run, define callbacks.
+- <strong>Initialise</strong> - Set up the batch run, define callbacks.
 - <strong>Process</strong> - The batch process operations.
 - <strong>Finish</strong> - A finish callback.
 
 ---
 
-## BatchBuilder Class
+## Initialise
 
-Used to setup the batch.
+The BatchBuilder class is used to setup the batch.
 
 ```php
 use Drupal\Core\Batch\BatchBuilder;
@@ -125,7 +125,7 @@ $batch = new BatchBuilder();
 ```
 
 ---
-## BatchBuilder Class
+## Initialise
 
 A number of methods set up different parameters.
 
@@ -139,7 +139,7 @@ $batch->setTitle('Running batch process.')
 ```
 
 ---
-## BatchBuilder Class
+## Initialise - Adding Operations
 
 Populate the operations we want to perform.
 
@@ -159,7 +159,7 @@ foreach ($chunks as $id => $chunk) {
 
 ---
 
-## Running The Batch
+## Process - batch_set()
 
 Set the batch running by calling `toArray()` and passing the array to `batch_set()`.
 
@@ -167,11 +167,11 @@ Set the batch running by calling `toArray()` and passing the array to `batch_set
 batch_set($batch->toArray());
 ```
 
-The whole purpose of this class to generate that array.
-This will initiate the batch process.
+The whole purpose of BatchBuilder is to generate that array.
+This will trigger and start up the batch process.
 
 ---
-## Batch Process
+## Process
 
 - Callback defined in the `addOperation()` method.
 - Parameters are the array of arguments you set.
@@ -185,7 +185,7 @@ public static function batchProcess(int $batchId, array $chunk, array &$context)
 
 ---
 
-## Tracking Progress
+## Process - Tracking Progress
 
 - The `$context` parameter is an array that is maintained between different batch calls.
 - The `"sandbox"` element is used inside the batch process and is deleted at the end of the batch run.
@@ -200,7 +200,7 @@ public static function batchProcess(int $batchId, array $chunk, array &$context)
 
 ---
 
-## Messages
+## Process - Messages
 
 - As the batch runs you can set a `"message"` element to print messages to the user.
 - This will appaer above the batch progress bar.
@@ -216,7 +216,7 @@ $context['message'] = t('Processing batch #@batch_id batch size @batch_size for 
 
 ---
 
-## Finished Callback
+## Finish - The Finished Callback
 
 - When the batch finishes the finished callback is triggered.
 - This has a set of parameters that detail how the batch performed.
@@ -241,6 +241,7 @@ $elapsed - Batch.inc kindly provides the elapsed processing time in seconds.
 
 - The Batch API is really an extension of the Queue system.
 - When you add operations to the batch you are adding items to the queue.
+- The Drupal batch runner then pulls items out of the queue and feeds them to the process method.
 
 ---
 
@@ -251,35 +252,79 @@ $elapsed - Batch.inc kindly provides the elapsed processing time in seconds.
 ## The Batch "finished" State
 
 - So far, we have looked at pre-confgured batch runs.
-- A better approach is to use the `finished` property of the batch $context array.
-- If we set this value to greater than 1 then the batch process is considered finished.
+- A better approach is to use the `finished` property of the batch `$context` array.
+- If we set this value to >= 1 then the batch process is considered finished.
+
+```php
+if (done) {
+  $context['finished'] = 1;
+}
+```
 
 ---
 
 ## The Batch "finished" State
+
+The setup is slightly different as we only create a single operation.
+
+```php
+$array = range(1, 1000);
+$batch->addOperation([BatchClass::class, 'batchProcess'], [$array]);
+```
+
+This is run over and over until we issue the finished state.
+
+---
+
+
+## The Batch "finished" State
+
+It is common to divide the progress by the maximum number of items.
 
 ```php
 $context['finished'] = $context['sandbox']['progress'] / $context['sandbox']['max'];
 ```
 
 ---
+<!-- _footer: "" -->
+## The Batch "finished" State
 
+This means we can just launch the batch with no arguments.
+
+```php
+$batch->addOperation([BatchProcessNodes::class, 'batchProcess']);
+```
+
+The "max" is found in the batchProcess() method.
+
+```php
+public static function batchProcess(array &$context): void {
+  if (!isset($context['sandbox']['progress'])) {
+    $query = \Drupal::entityQuery('node');
+    $query->accessCheck(FALSE);
+    $context['sandbox']['progress'] = 0;
+    $context['sandbox']['max'] = $query->count()->execute();
+  }
+```
+
+
+---
 
 # Running Batch With Drush
 
 ---
 ## Drush
 
-- Call batch set as normal.
+Call batch set as normal.
 
 ```php
 batch_set($batch->toArray());
 ```
-- Then call the Drush function.
+Then call the Drush function.
 ```php
 drush_backend_batch_process();
 ```
-- This will run the batch on the command line.
+This will run the batch on the command line. 
 
 ---
 
@@ -292,17 +337,43 @@ drush_backend_batch_process();
 
 # Examples Of Batch API In Action
 
+- Some live demos!
 ---
 
 ## Batch Using A Form
+- Look at 1,000 items and roll a dice.
 
 ---
 
-## Process a CSV file.
+## Batch Using Drush
+- Look at 1,000 items and roll a dice.
+
+---
+
+## Process a CSV file
+- Import 1,000 nodes using a batch process.
+
+---
+
+# Batch Inside Drupal
+
+---
+
+## The Update Hook
+
+- Update hooks get a $sandbox variable. This is actually a batch $context array.
 
 ---
 
 # Modules That Use Batch
+
+---
+
+## View Batch Operation
+
+- Batch process items in a view.
+
+<small>https://www.drupal.org/project/views_bulk_operations</small>
 
 ---
 
@@ -311,37 +382,33 @@ drush_backend_batch_process();
 - Shows a breakdown of the current queues in your system.
 - Gives the option to process queues as a batch run.
 
----
-
-## Example Links
-- [Link to website](https://www.hashbangcode.com)
-- [Link to slide](#5)
----
-
-<!-- _footer: "" -->
-## Page without a footer
-- Nope, no footer.
+<small>https://www.drupal.org/project/advancedqueue</small>
 
 ---
 
-## Small Text Slide
-<p class="small-text">This is small text.</p>
+## Resources
+
+- [Drupal 11: An Introduction To Batch Processing With The Batch API](https://www.hashbangcode.com/article/drupal-11-introduction-batch-processing-batch-api)
+- [Drupal 11: Batch Processing Using Drush](https://www.hashbangcode.com/article/drupal-11-batch-processing-using-drush)
+- [Drupal 11: Using The Finished State In Batch Processing](https://www.hashbangcode.com/article/drupal-11-using-finished-state-batch-processing)
+- [Drupal 11: Using The Batch API To Process CSV Files](https://www.hashbangcode.com/article/drupal-11-using-batch-api-process-csv-files)
+- [Drupal Batch Examples source code](https://github.com/hashbangcode/drupal_batch_examples/)
 
 ---
 
-## Talk template with image
-- Something.
-![bg right:50%](../src/assets/images/hashbangcode_logo.png)
+## Questions?
+
+- Slides: https://github.com/hashbangcode/drupal-batch-api-talk
+
+![bg h:50% right:40%](../src/assets/images/qr_slides.png)
 
 ---
 
-<!-- _footer: "" -->
-![bg h:100%](../src/assets/images/hashbangcode_logo.png)
+## Thanks!
+
+- Slides: https://github.com/hashbangcode/drupal-batch-api-talk
+
+![bg h:50% right:40%](../src/assets/images/qr_slides.png)
 
 ---
-
-
-
-
-
 
