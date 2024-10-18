@@ -187,6 +187,7 @@ batch_set($batch->toArray());
 <!--
 - This will redirect to the batch processor interface and call the process operations.
 - Yes you can also just define the array and send it to batch_set(), but I find BatchBuilder a nicer interface.
+- This is how Drupal uses the batch system internally.
 -->
 
 ---
@@ -216,6 +217,32 @@ public static function batchProcess(int $batchId, array $chunk, array &$context)
     if (!isset($context['results']['updated'])) { }
 }
 ```
+---
+
+## Process - Tracking Progress
+
+- Some sensible defaults.
+
+```php
+public static function batchProcess(int $batchId, array $chunk, array &$context): void {
+  if (!isset($context['sandbox']['progress'])) {
+    $context['sandbox']['progress'] = 0;
+    $context['sandbox']['max'] = 1000;
+  }
+  if (!isset($context['results']['updated'])) {
+    $context['results']['updated'] = 0;
+    $context['results']['skipped'] = 0;
+    $context['results']['failed'] = 0;
+    $context['results']['progress'] = 0;
+    $context['results']['process'] = 'Form batch completed';
+  }
+
+}
+```
+<!--
+- Remember that the sandbox is thrown away once the batch has completed.
+- That's why we have progress in results and in sandbox.
+-->
 
 ---
 
@@ -323,7 +350,7 @@ For example, you might want to report the results of the batch run to your user.
 
 - The Batch API is really an extension of the Queue system.
 - When you add operations to the batch you are adding items to the queue.
-- The Drupal batch runner then pulls items out of the queue and feeds them to the process method.
+- The Drupal batch runner then pulls items out of the queue and feeds them to the process.
 
 ---
 
@@ -412,6 +439,10 @@ This will run the batch on the command line.
 
 - Be careful! Drush will process the batch operations in the same memory space.
 - As you are on the command line you won't time out, but you can run out of memory.
+<!--
+- You may see timeouts, it depends on your server setup.
+- Generally, CLI has unlimited processing time for operations.
+-->
 
 ---
 
@@ -422,17 +453,20 @@ Some live demos!
 ---
 
 ## Batch Using A Form
-- Look at 1,000 items and roll a dice.
+- A look at the Batch API shown above.
+- Batch process goes through 1,000 items and roll a dice to determine outcome.
 
 ---
 
 ## Batch Using Drush
-- Look at 1,000 items and roll a dice.
+- Batch process goes through 1,000 items and roll a dice to determine outcome.
+- This time, in Drush!
 
 ---
 
 ## Process a CSV file
 - Import 1,000 nodes using a batch process.
+- This uses the `finished` property to track progress of the CSV and stop the batch when needed.
 
 ---
 
@@ -444,6 +478,10 @@ Some live demos!
 
 - Update hooks get a `$sandbox` variable. This is actually a batch `$context` array.
 - You can set the `#finished` property in the `$sandbox` array to stop the batch.
+<!--
+- Update hooks are hook_update_N() and hook_post_update_NAME().
+- Note the has in the finished property.
+-->
 
 ---
 <!-- _footer: "" -->
@@ -469,17 +507,19 @@ function batch_update_example_update_10001(&$sandbox) {
 
 ---
 
-## General Batch Uses
+## Batch API In Drupal
 
 - Drupal also makes use of the Batch API in lots of different situations. For example:
   - Installing Drupal.
-  - Deleting users.
-  - Bulk content updates.
   - Installing modules.
   - Importing translations.
   - Importing configuration.
+  - Deleting users.
+  - Bulk content updates.
   - And much more!
-
+<!--
+- Look for the progress bar. This will mean you are running the Batch API to perform the work.
+-->
 ---
 
 # Some Tips On Batch API Usage
