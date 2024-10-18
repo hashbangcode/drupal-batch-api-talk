@@ -561,21 +561,24 @@ function batch_update_example_update_10001(&$sandbox) {
 # Modules That Use Batch
 
 ---
+<!-- _footer: "" -->
+## Queue UI
 
-## View Batch Operation
+- View current queues and process them with a batch.
+
+<small>https://www.drupal.org/project/queue_ui</small>
+
+![width:1100px left:center](../src/assets/images/drupal_queue_ui.png)
+
+---
+
+## View Batch Operations
 
 - Batch process items in a view.
 
 <small>https://www.drupal.org/project/views_bulk_operations</small>
 
----
-
-## Advanced Queue
-
-- Shows a breakdown of the current queues in your system.
-- Gives the option to process queues as a batch run.
-
-<small>https://www.drupal.org/project/advancedqueue</small>
+![width:1100px left:center](../src/assets/images/view_batch_operations.png)
 
 ---
 
@@ -585,6 +588,8 @@ function batch_update_example_update_10001(&$sandbox) {
 
 <small>https://www.drupal.org/project/views_data_export</small>
 
+![width:1100px left:center](../src/assets/images/drupal_view_export.png)
+
 ---
 
 ## Batch Plugin
@@ -592,6 +597,8 @@ function batch_update_example_update_10001(&$sandbox) {
 - Wraps the Batch API in a plugin to make your batch operations pluggable.
 
 <small>https://www.drupal.org/project/batch_plugin</small>
+
+![width:1100px left:center](../src/assets/images/drupal_batch_plugin.png)
 
 ---
 
