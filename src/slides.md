@@ -35,9 +35,9 @@ marp: true
 ---
 
 ## Source Code
-- This presentation is available at
+- This presentation:
 <small>https://github.com/hashbangcode/drupal-batch-api-talk</small>
-- All code seen in this presentaiton is available at
+- All code seen here is available:
 <small>https://github.com/hashbangcode/drupal_batch_examples</small>
 - I have also written extensively about the Batch API on <small>https://www.hashbangcode.com/</small>
 
@@ -89,7 +89,7 @@ Source: https://www.cloudflare.com/learning/performance/more/website-performance
 - But, setting them high would cause problems on your web server.
 - Think about how long a page request should take in you web server.
 2-5 seconds MAX!
-- The more resources you give to your web server, the users you can accommodate at once.
+- The more resources you give to these services, the users you can accommodate at once.
 -->
 
 ---
@@ -176,14 +176,14 @@ foreach ($chunks as $id => $chunk) {
 
 ## Initialise - Start Batch Run
 
-Set the batch running by calling `toArray()` and passing the array to `batch_set()`.
+- Set the batch running by calling `toArray()` and passing the array to `batch_set()`.
 
 ```php
 batch_set($batch->toArray());
 ```
 
-The whole purpose of `BatchBuilder` is to generate that array.
-This will trigger and start up the batch process.
+- The whole purpose of `BatchBuilder` is to generate that array.
+- This will trigger and start up the batch process.
 <!--
 - This will redirect to the batch processor interface and call the process operations.
 - Yes you can also just define the array and send it to batch_set(), but I find BatchBuilder a nicer interface.
@@ -232,7 +232,34 @@ $context['message'] = t('Processing batch #@batch_id batch size @batch_size for 
   '@count' => number_format($context['sandbox']['max']),
 ]);
 ```
+---
 
+## Process
+
+- Perform the task you want in the batch.
+
+```php
+public static function batchProcess(int $batchId, array $chunk, array &$context): void {
+  // --- Set up and messages goes here...
+  $random = new Random();
+  foreach ($chunk as $number) {
+    $context['results']['progress']++;
+    $node = Node::create([
+      'type' => 'article',
+      'title' => $random->name(15),
+      'body' => [
+        'value' => '<p>' . $random->sentences(2) . '</p>', 'format' => filter_default_format(),
+      ],
+      'uid' => 1,
+      'status' => 1,
+    ]);
+    $node->save();
+  }
+}
+```
+<!-- 
+- This creates 1,000 nodes based on the chunks of 100 items from the setup.
+-->
 ---
 
 ## Finish - The Finished Callback
