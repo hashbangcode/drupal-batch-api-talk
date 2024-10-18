@@ -35,11 +35,13 @@ marp: true
 ---
 
 ## Source Code
-- This presentation:
-<small>https://github.com/hashbangcode/drupal-batch-api-talk</small>
-- All code seen here is available:
-<small>https://github.com/hashbangcode/drupal_batch_examples</small>
-- I have also written extensively about the Batch API on <small>https://www.hashbangcode.com/</small>
+- Talk is available on the QR code.
+- All code seen can be found here
+<small>https://bit.ly/3BQ4rsW</small>
+- I have also written about the Batch API on 
+<small>https://www.hashbangcode.com/</small>
+
+![bg h:50% right:40%](../src/assets/images/qr_slides.png)
 
 ---
 
@@ -77,7 +79,7 @@ Source: https://www.cloudflare.com/learning/performance/more/website-performance
 
 ## Server Timeouts
 
-- Servers are designed to throw errors is something takes too long. Some defaults:
+- Servers are designed to throw errors if something takes too long. Some defaults:
 
   - PHP (`max_execution_time`) - 30 seconds
   - PHP (`memory_limit`) - 256MB (recommended for Drupal)
@@ -194,7 +196,7 @@ batch_set($batch->toArray());
 <!-- _footer: "" -->
 ## Process
 
-- The callbacks defined in the `addOperation()` method are called.
+- The callbacks defined in the `addOperation()` method are executed.
 - Parameters are the array of arguments you set.
 - `$context` is passed as the last parameter is used to track progress.
 
@@ -209,7 +211,7 @@ public static function batchProcess(int $batchId, array $chunk, array &$context)
 
 - The `$context` parameter is an array that is maintained between different batch calls.
 - The `"sandbox"` element is used inside the batch process and is deleted at the end of the batch run.
-- The `"results"` element is will be passed to the finished callback and is often used to track progres for reporting.
+- The `"results"` element will be passed to the finished callback and is often used to track progres for reporting.
 
 ```php
 public static function batchProcess(int $batchId, array $chunk, array &$context): void {
@@ -248,8 +250,8 @@ public static function batchProcess(int $batchId, array $chunk, array &$context)
 
 ## Process - Messages
 
-- As the batch runs you can set a `"message"` element to print messages to the user.
-- This will appaer above the batch progress bar as the batch progresses.
+- As the batch runs you can set a `"message"` property to print messages to the user.
+- This will appear above the batch progress bar as the batch progresses.
 
 ```php
 // Message above progress bar.
@@ -291,7 +293,7 @@ public static function batchProcess(int $batchId, array $chunk, array &$context)
 
 ## Finish - The Finished Callback
 
-- When the batch finishes the finished callback is triggered.
+- When the batch finishes, the finished callback is triggered.
 - This has a set of parameters that detail how the batch performed.
 
 ```php
@@ -360,7 +362,7 @@ For example, you might want to report the results of the batch run to your user.
 
 ## The Batch "finished" State
 
-- So far, we have looked at pre-confgured batch runs.
+- So far, we have looked at pre-configured batch runs.
 - A better approach is to use the `finished` property of the batch `$context` array.
 - If we set this value to >= 1 then the batch process is considered finished.
 
@@ -435,6 +437,10 @@ This will run the batch on the command line.
 
 ---
 
+![bg height:90%](../src/assets/images/drush_batch_run.png)
+
+---
+
 ## Drush
 
 - Be careful! Drush will process the batch operations in the same memory space.
@@ -454,12 +460,12 @@ Some live demos!
 
 ## Batch Using A Form
 - A look at the Batch API shown above.
-- Batch process goes through 1,000 items and roll a dice to determine outcome.
+- Batch process goes through 1,000 items and randomly determines outcome.
 
 ---
 
 ## Batch Using Drush
-- Batch process goes through 1,000 items and roll a dice to determine outcome.
+- Batch process goes through 1,000 items and randomly determines outcome.
 - This time, in Drush!
 
 ---
@@ -528,7 +534,7 @@ function batch_update_example_update_10001(&$sandbox) {
 
 ## When To Use The Batch API
 
-- If the request processes items them move it into a batch.
+- If the request processes items then move it into a batch.
 - Users will more readily wait for a batch to finish than a spinning page.
 - Use the batch system early to save having to rework things later.
 
