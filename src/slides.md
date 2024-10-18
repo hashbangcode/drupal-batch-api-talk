@@ -62,7 +62,7 @@ Allows data to be processed in small chunks in order to prevent timeout errors o
 
 ---
 
-## Bouncing Users
+## Bored Users
 - Users get bored quickly.
 - Studies show that a 5 second page load has a 0.6% conversion rate.
 - Reducing this to 2 seconds doubes the conversion rate.
@@ -118,9 +118,9 @@ Source: https://www.cloudflare.com/learning/performance/more/website-performance
 
 ---
 
-## The Batch Process
+## The Batch API Stages
 
-The Batch API can be thought of as the following:
+The Batch API can be thought of as the following stages:
 
 - <strong>Initialise</strong> - Set up the batch run, define callbacks.
 - <strong>Process</strong> - The batch process operations.
@@ -169,10 +169,12 @@ foreach ($chunks as $id => $chunk) {
   $batch->addOperation([BatchClass::class, 'batchProcess'], $args);
 }
 ```
-
+<!-- 
+- You can add multiple operations to perform different tasks.
+-->
 ---
 
-## Process
+## Initialise - Start Batch Run
 
 Set the batch running by calling `toArray()` and passing the array to `batch_set()`.
 
@@ -191,7 +193,7 @@ This will trigger and start up the batch process.
 <!-- _footer: "" -->
 ## Process
 
-- The callbacks defined in the `addOperation()` method.
+- The callbacks defined in the `addOperation()` method are called.
 - Parameters are the array of arguments you set.
 - `$context` is passed as the last parameter is used to track progress.
 
@@ -199,8 +201,6 @@ This will trigger and start up the batch process.
 public static function batchProcess(int $batchId, array $chunk, array &$context): void {
 }
 ```
-
-- This method is called multiple times (depending on the batch run).
 
 ---
 <!-- _footer: "" -->
@@ -284,9 +284,19 @@ For example, you might want to report the results of the batch run to your user.
 ![width:30cm center](../src/assets/images/batch_process_running_requests.png)
 
 <!-- 
-- The batch JavaScript called the /batch endpoint.
 - This handles the processing of the batch operations.
+- JavaScript calls the /batch endpoint.
+- This then responds with the result of a batch run.
+- You still need to keep each individual process operation small.
 -->
+
+---
+
+## Batch Internal Workings
+
+- The Batch API is really an extension of the Queue system.
+- When you add operations to the batch you are adding items to the queue.
+- The Drupal batch runner then pulls items out of the queue and feeds them to the process method.
 
 ---
 
@@ -339,7 +349,7 @@ This also means that we can just launch the batch with no arguments.
 $batch->addOperation([BatchProcessNodes::class, 'batchProcess']);
 ```
 
-The `max` property is found in the batchProcess() method the first time it is run.
+The `max` property is discovered in the `batchProcess()` method the first time it is run.
 
 ```php
 public static function batchProcess(array &$context): void {
@@ -350,21 +360,6 @@ public static function batchProcess(array &$context): void {
     $context['sandbox']['max'] = $query->count()->execute();
   }
 ```
-
----
-
-## Batch Internal Workings
-
-- The Batch API is really an extension of the Queue system.
-- When you add operations to the batch you are adding items to the queue.
-- The Drupal batch runner then pulls items out of the queue and feeds them to the process method.
-
----
-
-## When To Use The Batch API
-
-- If the request processes lots of items them move it into a batch.
-- Use the batch system early to save having to rework things later.
 
 ---
 
@@ -459,6 +454,19 @@ function batch_update_example_update_10001(&$sandbox) {
   - And much more!
 
 ---
+
+# Some Tips On Batch API Usage
+
+---
+
+## When To Use The Batch API
+
+- If the request processes items them move it into a batch.
+- Users will more readily wait for a batch to finish than a spinning page.
+- Use the batch system early to save having to rework things later.
+
+---
+
 <!-- _footer: "" -->
 
 ## Top Tips
@@ -466,12 +474,15 @@ function batch_update_example_update_10001(&$sandbox) {
 - If the data needs to be processed in real time then use a batch; otherwise use a standard queue.
 - Kick off your batches in a form or controller, but process the batch in a separate class. This allows easy Drush integration.
 - Use the `finished` property to make dynamic batches; rather than preloaded.
-- Keep your batch operations simple. Breat them apart into separate operations if needed.
-- Allow batch operations to pick up where they left off.
 
-<!--
-- Think about the footprint of your batch operations. Keep them small.
--->
+---
+
+## Top Tips
+
+- Keep your batch operations simple. Break them apart into separate operations if needed.
+- Think about the footprint of your batch operations. Keep them small. You can still cause timeouts during the batch if you aren't careful.
+- Try to allow batch operations to pick up where they left off. If any errors occur you can re-run to complete the task.
+
 ---
 
 # Modules That Use Batch
