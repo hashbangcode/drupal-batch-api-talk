@@ -15,7 +15,7 @@ style: |
   p.centre {
     text-align: center;
   }
-footer: "Philip Norton [hashbangcode.com](https://www.hashbangcode.com) [@hashbangcode](https://fosstodon.org/@hashbangcode) [@philipnorton42](https://fosstodon.org/@philipnorton42)"
+footer: "Philip Norton [hashbangcode.com](https://www.hashbangcode.com) [fosstodon.org@hashbangcode](https://fosstodon.org/@hashbangcode) [fosstodon.org@philipnorton42](https://fosstodon.org/@philipnorton42)"
 marp: true
 ---
 
