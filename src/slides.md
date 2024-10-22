@@ -610,12 +610,12 @@ function batch_update_example_update_10001(&$sandbox) {
 
 ## Resources
 
-- [Drupal 11: An Introduction To Batch Processing With The Batch API](https://www.hashbangcode.com/article/drupal-11-introduction-batch-processing-batch-api)
-- [Drupal 11: Batch Processing Using Drush](https://www.hashbangcode.com/article/drupal-11-batch-processing-using-drush)
-- [Drupal 11: Using The Finished State In Batch Processing](https://www.hashbangcode.com/article/drupal-11-using-finished-state-batch-processing)
-- [Drupal 11: Using The Batch API To Process CSV Files](https://www.hashbangcode.com/article/drupal-11-using-batch-api-process-csv-files)
-- [Drupal Batch Examples source code](https://github.com/hashbangcode/drupal_batch_examples/)
-
+- Batch on `#! code` <small>https://www.hashbangcode.com/tag/batch-api</small>
+- All code seen is code available at <small>https://github.com/hashbangcode/drupal_batch_examples/</small>
+- Batch Processing and the Drupal Queue System - <small>https://www.drupalatyourfingertips.com/bq</small>
+<!--
+- See the list at the repo page https://github.com/hashbangcode/drupal-batch-api-talk.
+-->
 ---
 
 ## Questions?
