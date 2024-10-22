@@ -29,7 +29,7 @@ marp: true
 # Philip Norton
 - Developer at Code Enigma
 - Writer at `#! code` (www.hashbangcode.com)
-- NWDUG host
+- NWDUG co-organiser
 ![bg h:50% right:40%](../src/assets/images/lily58.png)
 
 ---
@@ -39,7 +39,7 @@ marp: true
 - All code seen can be found here
 <small>https://bit.ly/3BQ4rsW</small>
 - I have also written about the Batch API on 
-<small>https://www.hashbangcode.com/</small>
+<small>[www.hashbangcode.com](www.hashbangcode.com)</small>
 
 ![bg h:50% right:40%](../src/assets/images/qr_slides.png)
 
@@ -87,6 +87,7 @@ Source: https://www.cloudflare.com/learning/performance/more/website-performance
   - Nginx (`send_timeout`/`proxy_send_timeout`) - 60 seconds
 
 <!--
+- CDNs also sit on top of this. With even stricter timeout limits.
 - You can override all these options.
 - But, setting them high would cause problems on your web server.
 - Think about how long a page request should take in you web server.
@@ -116,8 +117,9 @@ Source: https://www.cloudflare.com/learning/performance/more/website-performance
 
 ---
 
-# The Batch API
-
+# Using The Batch API
+- Look at some code to run batches.
+- Do some demos showing the code in action.
 ---
 
 ## The Batch API Stages
@@ -273,6 +275,7 @@ public static function batchProcess(int $batchId, array $chunk, array &$context)
   $random = new Random();
   foreach ($chunk as $number) {
     $context['results']['progress']++;
+    $context['sandbox']['progress']++;
     $node = Node::create([
       'type' => 'article',
       'title' => $random->name(15),
@@ -364,7 +367,7 @@ For example, you might want to report the results of the batch run to your user.
 
 - So far, we have looked at pre-configured batch runs.
 - A better approach is to use the `finished` property of the batch `$context` array.
-- If we set this value to >= 1 then the batch process is considered finished.
+- If we set this value to >= 1 then the batch process callback is considered finished.
 
 ```php
 if (done) {
@@ -480,13 +483,29 @@ Some live demos!
 
 ---
 
+## Batch API In Drupal
+
+- Drupal makes use of the Batch API in lots of different situations. For example:
+  - Installing Drupal.
+  - Installing modules.
+  - Importing translations.
+  - Importing configuration.
+  - Deleting users.
+  - Bulk content updates.
+  - And much more!
+<!--
+- Look for the progress bar. This will mean you are running the Batch API to perform the work.
+-->
+
+---
+
 ## The Update Hook
 
 - Update hooks get a `$sandbox` variable. This is actually a batch `$context` array.
+- Update hooks are hook_update_N() and hook_post_update_NAME().
 - You can set the `#finished` property in the `$sandbox` array to stop the batch.
 <!--
-- Update hooks are hook_update_N() and hook_post_update_NAME().
-- Note the has in the finished property.
+- Note the hash in the finished property.
 -->
 
 ---
@@ -499,8 +518,10 @@ function batch_update_example_update_10001(&$sandbox) {
     $sandbox['progress'] = 0;
     $sandbox['max'] = 1000;
   }
+  $batchSize = 100;
+  $batchUpperRange = $sandbox['progress'] + $batchSize;
 
-  for ($i = 0; $i < 100; $i++) {
+  for ($i = $sandbox['progress']; $i < $batchUpperRange; $i++) {
     // Keep track of progress.
     $sandbox['progress']++;
     // Do some actions...
@@ -513,28 +534,13 @@ function batch_update_example_update_10001(&$sandbox) {
 
 ---
 
-## Batch API In Drupal
-
-- Drupal also makes use of the Batch API in lots of different situations. For example:
-  - Installing Drupal.
-  - Installing modules.
-  - Importing translations.
-  - Importing configuration.
-  - Deleting users.
-  - Bulk content updates.
-  - And much more!
-<!--
-- Look for the progress bar. This will mean you are running the Batch API to perform the work.
--->
----
-
 # Some Tips On Batch API Usage
 
 ---
 
 ## When To Use The Batch API
 
-- If the request processes items then move it into a batch.
+- If the request processes multiple items then move it into a batch.
 - Users will more readily wait for a batch to finish than a spinning page.
 - Use the batch system early to save having to rework things later.
 
