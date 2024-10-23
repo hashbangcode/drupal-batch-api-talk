@@ -99,9 +99,9 @@ Source: https://www.cloudflare.com/learning/performance/more/website-performance
 - CDNs also sit on top of this. With even stricter timeout limits.
 - You can override all these options.
 - But, setting them high would cause problems on your web server.
+- The more resources you give to these services, the less users you can accommodate at once.
 - Think about how long a page request should take in you web server.
 2-5 seconds MAX!
-- The more resources you give to these services, the users you can accommodate at once.
 -->
 
 ---
@@ -301,6 +301,20 @@ public static function batchProcess(int $batchId, array $chunk, array &$context)
 <!-- 
 - This creates 1,000 nodes based on the chunks of 100 items from the setup.
 -->
+
+---
+<!-- _footer: "" -->
+## The Running Batch
+
+![width:30cm center](../src/assets/images/batch_process_running_requests.png)
+
+<!-- 
+- This handles the processing of the batch operations.
+- JavaScript calls the /batch endpoint.
+- This then responds with the result of a batch run.
+- You still need to keep each individual process operation small.
+-->
+
 ---
 
 ## Finish - The Finished Callback
@@ -346,19 +360,6 @@ For example, you might want to report the results of the batch run to your user.
 
 ---
 
-<!-- _footer: "" -->
-## The Running Batch
-
-![width:30cm center](../src/assets/images/batch_process_running_requests.png)
-
-<!-- 
-- This handles the processing of the batch operations.
-- JavaScript calls the /batch endpoint.
-- This then responds with the result of a batch run.
-- You still need to keep each individual process operation small.
--->
-
----
 
 ## Batch Internal Workings
 
