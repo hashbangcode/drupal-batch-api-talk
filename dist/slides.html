@@ -127,8 +127,9 @@ p.centre {
 ;--marpit-advanced-background-split:40%;" data-marpit-pagination-total="54" data-size="16:9" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
 <h2 id="source-code">Source Code</h2>
 <ul>
-<li>Talk is available on the QR code.</li>
-<li>All code seen can be found here<br />
+<li>Talk is available at:<br />
+<small><a href="https://github.com/hashbangcode/drupal-batch-api-talk">https://github.com/hashbangcode/drupal-batch-api-talk</a></small></li>
+<li>All code seen can be found at:<br />
 <small><a href="https://bit.ly/3BQ4rsW">https://bit.ly/3BQ4rsW</a></small></li>
 <li>I have also written about the Batch API on<br />
 <small><a href="www.hashbangcode.com">www.hashbangcode.com</a></small></li>
@@ -260,8 +261,7 @@ p.centre {
 ;" data-marpit-pagination-total="54" data-size="16:9">
 <h2 id="server-timeouts">Server Timeouts</h2>
 <ul>
-<li>
-<p>Servers are designed to throw errors if something takes too long. Some defaults:</p>
+<li>Servers are designed to throw errors if something takes too long. Some defaults:
 <ul>
 <li>PHP (<code>max_execution_time</code>) - 30 seconds</li>
 <li>PHP (<code>memory_limit</code>) - 256MB (recommended for Drupal)</li>
@@ -1653,7 +1653,7 @@ p {
 p.centre {
   text-align: center;
 }
-" lang="C" class="lead invert" data-marpit-pagination="54" style="" data-marpit-pagination-total="54" data-size="16:9" data-marpit-advanced-background="pseudo" data-marpit-advanced-background-split="right"></section></foreignObject></svg></div><div class="bespoke-marp-note" data-index="3" tabindex="0"><p>The Drupal Batch API is a system that allows us to split up large tasks into smaller chunks so that we don't overload the web server. This is a really important concept to understand if you are developing your own Drupal modules, especially if you want to allow users to perform actions on lots of items at once.
+" lang="C" class="lead invert" data-marpit-pagination="54" style="" data-marpit-pagination-total="54" data-size="16:9" data-marpit-advanced-background="pseudo" data-marpit-advanced-background-split="right"></section></foreignObject></svg></div><div class="bespoke-marp-note" data-index="2" tabindex="0"><p>- Scan the QR code for the talk repo. Which has links to all of the resources you need.</p></div><div class="bespoke-marp-note" data-index="3" tabindex="0"><p>The Drupal Batch API is a system that allows us to split up large tasks into smaller chunks so that we don't overload the web server. This is a really important concept to understand if you are developing your own Drupal modules, especially if you want to allow users to perform actions on lots of items at once.
 In this session we will look at why we need the Drupal Batch API and how it prevents issues. We'll then do a dive into the code surrounding the Batch API and how to run your own batch operations.
 There will be a few demos on running the Batch API to perform some simple tasks.
 Finally, we'll look at how Drupal uses the Batch API internally and some use cases of the Batch API in contributed modules.</p></div><div class="bespoke-marp-note" data-index="6" tabindex="0"><p>Source: https://www.cloudflare.com/learning/performance/more/website-performance-conversion-rates/</p></div><div class="bespoke-marp-note" data-index="7" tabindex="0"><p>- CDNs also sit on top of this. With even stricter timeout limits.
