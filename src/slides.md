@@ -32,8 +32,14 @@ marp: true
 - NWDUG co-organiser
 ![bg h:50% right:40%](../src/assets/images/lily58.png)
 
----
+<!--
+- Doing Drupal for about 15 years.
+- Programming in general for about 20 now.
+- That is a picture of a Lily58 mechanical keyboard.
+-->
 
+---
+<!-- _footer: "" -->
 ## Source Code
 - Talk is available at:
 <small>https://github.com/hashbangcode/drupal-batch-api-talk</small> 
