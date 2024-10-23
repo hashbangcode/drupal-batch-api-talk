@@ -432,6 +432,12 @@ public static function batchProcess(array &$context): void {
 
 ---
 
+## The Batch "finished" State
+
+- Use the `finished` state over the pre-loaded batch operations where possible.
+
+---
+
 # Running Batch With Drush
 
 ---
@@ -560,17 +566,17 @@ function batch_update_example_update_10001(&$sandbox) {
 
 ## Top Tips
 
-- If the data needs to be processed in real time then use a batch; otherwise use a standard queue.
-- Kick off your batches in a form or controller, but process the batch in a separate class. This allows easy Drush integration.
-- Use the `finished` property to make dynamic batches; rather than preloaded.
+* If the data needs to be processed in real time then use a batch; otherwise use a standard queue.
+* Kick off your batches in a form or controller, but process the batch in a separate class. This allows easy Drush integration.
+* Use the `finished` property to make dynamic batches; rather than preloaded.
 
 ---
 
 ## Top Tips
 
-- Keep your batch operations simple. Break them apart into separate operations if needed.
-- Think about the footprint of your batch operations. Keep them small. You can still cause timeouts during the batch if you aren't careful.
-- Try to allow batch operations to pick up where they left off. If any errors occur you can re-run to complete the task.
+* Keep your batch operations simple. Break them apart into separate operations if needed.
+* Think about the footprint of your batch operations. Keep them small. You can still cause timeouts during the batch if you aren't careful.
+* Try to allow batch operations to pick up where they left off. If any errors occur you can re-run to complete the task.
 
 ---
 
