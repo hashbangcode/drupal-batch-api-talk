@@ -35,14 +35,18 @@ marp: true
 ---
 
 ## Source Code
-- Talk is available on the QR code.
-- All code seen can be found here
+- Talk is available at:
+<small>https://github.com/hashbangcode/drupal-batch-api-talk</small> 
+- All code seen can be found at:
 <small>https://bit.ly/3BQ4rsW</small>
 - I have also written about the Batch API on 
 <small>[www.hashbangcode.com](www.hashbangcode.com)</small>
 
 ![bg h:50% right:40%](../src/assets/images/qr_slides.png)
 
+<!-- 
+- Scan the QR code for the talk repo. Which has links to all of the resources you need.
+-->
 ---
 
 # The Drupal Batch API
@@ -80,7 +84,6 @@ Source: https://www.cloudflare.com/learning/performance/more/website-performance
 ## Server Timeouts
 
 - Servers are designed to throw errors if something takes too long. Some defaults:
-
   - PHP (`max_execution_time`) - 30 seconds
   - PHP (`memory_limit`) - 256MB (recommended for Drupal)
   - Apache (`TimeOut`) - 60 seconds

@@ -1,6 +1,14 @@
 # Drupal Batch API
 A talk about the Drupal Batch API.
 
+## Slides
+
+You can view the slides in a number of ways:
+
+- HTML (download this repo open the file `dist/slides.html`)
+- [PDF](https://github.com/hashbangcode/drupal-batch-api-talk/blob/main/dist/slides.pdf)
+- [PPTX](https://github.com/hashbangcode/drupal-batch-api-talk/blob/main/dist/slides.pptx)
+
 ## Resources
 
 - [Drupal 11: An Introduction To Batch Processing With The Batch API](https://www.hashbangcode.com/article/drupal-11-introduction-batch-processing-batch-api)
