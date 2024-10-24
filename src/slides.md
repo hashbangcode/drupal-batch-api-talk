@@ -77,7 +77,7 @@ Allows data to be processed in small chunks in order to prevent timeout errors o
 ## Bored Users
 - Users get bored quickly.
 - Studies show that a 5 second page load has a 0.6% conversion rate.
-- Reducing this to 2 seconds doubes the conversion rate.
+- Reducing this to 2 seconds doubles the conversion rate.
 - This still means that after 2 seconds 98% of users will assume the page will not do anything.
 
 
@@ -554,14 +554,6 @@ function batch_update_example_update_10001(&$sandbox) {
 
 ---
 
-## When To Use The Batch API
-
-- If the request processes multiple items then move it into a batch.
-- Users will more readily wait for a batch to finish than a spinning page.
-- Use the batch system early to save having to rework things later.
-
----
-
 <!-- _footer: "" -->
 
 ## Top Tips
@@ -577,6 +569,14 @@ function batch_update_example_update_10001(&$sandbox) {
 * Keep your batch operations simple. Break them apart into separate operations if needed.
 * Think about the footprint of your batch operations. Keep them small. You can still cause timeouts during the batch if you aren't careful.
 * Try to allow batch operations to pick up where they left off. If any errors occur you can re-run to complete the task.
+
+---
+
+## When To Use The Batch API
+
+* If the request processes multiple items then move it into a batch.
+* Users will more readily wait for a batch to finish than a spinning page.
+* Use the batch system early to save having to rework things later.
 
 ---
 
