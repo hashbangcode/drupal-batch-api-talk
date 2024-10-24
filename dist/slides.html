@@ -234,7 +234,7 @@ p.centre {
 <ul>
 <li>Users get bored quickly.</li>
 <li>Studies show that a 5 second page load has a 0.6% conversion rate.</li>
-<li>Reducing this to 2 seconds doubes the conversion rate.</li>
+<li>Reducing this to 2 seconds doubles the conversion rate.</li>
 <li>This still means that after 2 seconds 98% of users will assume the page will not do anything.</li>
 </ul>
 <footer>Philip Norton <a href="https://www.hashbangcode.com">hashbangcode.com</a> <a href="https://fosstodon.org/@hashbangcode">fosstodon.org@hashbangcode</a> <a href="https://fosstodon.org/@philipnorton42">fosstodon.org@philipnorton42</a></footer>
@@ -1336,7 +1336,7 @@ p.centre {
 <h1 id="some-tips-on-batch-api-usage">Some Tips On Batch API Usage</h1>
 <footer>Philip Norton <a href="https://www.hashbangcode.com">hashbangcode.com</a> <a href="https://fosstodon.org/@hashbangcode">fosstodon.org@hashbangcode</a> <a href="https://fosstodon.org/@philipnorton42">fosstodon.org@philipnorton42</a></footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="45" data-paginate="true" data-class="lead invert" data-footer="Philip Norton [hashbangcode.com](https://www.hashbangcode.com) [fosstodon.org@hashbangcode](https://fosstodon.org/@hashbangcode) [fosstodon.org@philipnorton42](https://fosstodon.org/@philipnorton42)" data-theme="uncover" data-style=".small-text {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="45" data-marpit-fragments="3" data-paginate="true" data-class="lead invert" data-theme="uncover" data-style=".small-text {
   font-size: 0.75rem;
 }
 p {
@@ -1345,34 +1345,7 @@ p {
 p.centre {
   text-align: center;
 }
-" lang="C" class="lead invert" data-marpit-pagination="45" style="--paginate:true;--class:lead invert;--footer:Philip Norton [hashbangcode.com](https://www.hashbangcode.com) [fosstodon.org@hashbangcode](https://fosstodon.org/@hashbangcode) [fosstodon.org@philipnorton42](https://fosstodon.org/@philipnorton42);--theme:uncover;--style:.small-text {
-  font-size: 0.75rem;
-}
-p {
-  text-align: left;
-}
-p.centre {
-  text-align: center;
-}
-;" data-marpit-pagination-total="55" data-size="16:9">
-<h2 id="when-to-use-the-batch-api">When To Use The Batch API</h2>
-<ul>
-<li>If the request processes multiple items then move it into a batch.</li>
-<li>Users will more readily wait for a batch to finish than a spinning page.</li>
-<li>Use the batch system early to save having to rework things later.</li>
-</ul>
-<footer>Philip Norton <a href="https://www.hashbangcode.com">hashbangcode.com</a> <a href="https://fosstodon.org/@hashbangcode">fosstodon.org@hashbangcode</a> <a href="https://fosstodon.org/@philipnorton42">fosstodon.org@philipnorton42</a></footer>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="46" data-marpit-fragments="3" data-paginate="true" data-class="lead invert" data-theme="uncover" data-style=".small-text {
-  font-size: 0.75rem;
-}
-p {
-  text-align: left;
-}
-p.centre {
-  text-align: center;
-}
-" lang="C" class="lead invert" data-marpit-pagination="46" style="--paginate:true;--class:lead invert;--theme:uncover;--style:.small-text {
+" lang="C" class="lead invert" data-marpit-pagination="45" style="--paginate:true;--class:lead invert;--theme:uncover;--style:.small-text {
   font-size: 0.75rem;
 }
 p {
@@ -1388,6 +1361,33 @@ p.centre {
 <li data-marpit-fragment="2">Kick off your batches in a form or controller, but process the batch in a separate class. This allows easy Drush integration.</li>
 <li data-marpit-fragment="3">Use the <code>finished</code> property to make dynamic batches; rather than preloaded.</li>
 </ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="46" data-marpit-fragments="3" data-paginate="true" data-class="lead invert" data-footer="Philip Norton [hashbangcode.com](https://www.hashbangcode.com) [fosstodon.org@hashbangcode](https://fosstodon.org/@hashbangcode) [fosstodon.org@philipnorton42](https://fosstodon.org/@philipnorton42)" data-theme="uncover" data-style=".small-text {
+  font-size: 0.75rem;
+}
+p {
+  text-align: left;
+}
+p.centre {
+  text-align: center;
+}
+" lang="C" class="lead invert" data-marpit-pagination="46" style="--paginate:true;--class:lead invert;--footer:Philip Norton [hashbangcode.com](https://www.hashbangcode.com) [fosstodon.org@hashbangcode](https://fosstodon.org/@hashbangcode) [fosstodon.org@philipnorton42](https://fosstodon.org/@philipnorton42);--theme:uncover;--style:.small-text {
+  font-size: 0.75rem;
+}
+p {
+  text-align: left;
+}
+p.centre {
+  text-align: center;
+}
+;" data-marpit-pagination-total="55" data-size="16:9">
+<h2 id="top-tips-1">Top Tips</h2>
+<ul>
+<li data-marpit-fragment="1">Keep your batch operations simple. Break them apart into separate operations if needed.</li>
+<li data-marpit-fragment="2">Think about the footprint of your batch operations. Keep them small. You can still cause timeouts during the batch if you aren't careful.</li>
+<li data-marpit-fragment="3">Try to allow batch operations to pick up where they left off. If any errors occur you can re-run to complete the task.</li>
+</ul>
+<footer>Philip Norton <a href="https://www.hashbangcode.com">hashbangcode.com</a> <a href="https://fosstodon.org/@hashbangcode">fosstodon.org@hashbangcode</a> <a href="https://fosstodon.org/@philipnorton42">fosstodon.org@philipnorton42</a></footer>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="47" data-marpit-fragments="3" data-paginate="true" data-class="lead invert" data-footer="Philip Norton [hashbangcode.com](https://www.hashbangcode.com) [fosstodon.org@hashbangcode](https://fosstodon.org/@hashbangcode) [fosstodon.org@philipnorton42](https://fosstodon.org/@philipnorton42)" data-theme="uncover" data-style=".small-text {
   font-size: 0.75rem;
@@ -1408,11 +1408,11 @@ p.centre {
   text-align: center;
 }
 ;" data-marpit-pagination-total="55" data-size="16:9">
-<h2 id="top-tips-1">Top Tips</h2>
+<h2 id="when-to-use-the-batch-api">When To Use The Batch API</h2>
 <ul>
-<li data-marpit-fragment="1">Keep your batch operations simple. Break them apart into separate operations if needed.</li>
-<li data-marpit-fragment="2">Think about the footprint of your batch operations. Keep them small. You can still cause timeouts during the batch if you aren't careful.</li>
-<li data-marpit-fragment="3">Try to allow batch operations to pick up where they left off. If any errors occur you can re-run to complete the task.</li>
+<li data-marpit-fragment="1">If the request processes multiple items then move it into a batch.</li>
+<li data-marpit-fragment="2">Users will more readily wait for a batch to finish than a spinning page.</li>
+<li data-marpit-fragment="3">Use the batch system early to save having to rework things later.</li>
 </ul>
 <footer>Philip Norton <a href="https://www.hashbangcode.com">hashbangcode.com</a> <a href="https://fosstodon.org/@hashbangcode">fosstodon.org@hashbangcode</a> <a href="https://fosstodon.org/@philipnorton42">fosstodon.org@philipnorton42</a></footer>
 </section>
